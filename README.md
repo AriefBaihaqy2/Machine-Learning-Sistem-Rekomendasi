@@ -1,6 +1,6 @@
 # Laporan Proyek Machine Learning - Imam Arief Al Baihaqy
 
-## Domain Proyek
+## Domain Proyek (Perlu Modif)
 
 ### Latar Belakang
 
@@ -9,7 +9,7 @@ Rumah merupakan kebutuhan primer bagi manusia. Setiap orang tentu punya rumah id
 Kurangnya media informasi menyulitkan dalam mendapatkan informasi harga sewa rumah. Sehingga diperlukan model untuk dapat memprediksi harga sewa rumah untuk mempermudah dalam bertransaksi. 
 
 Bagi calon konsumen tentunya sangat konservatif mengenai harga dan tipe rumah yang diinginkan. Sehingga dibutuhkan model prediksi yang bisa digunakan untuk mengetahui kisaran harga sewa rumah yang diinginkan konsumen sesuai kriteria tipe rumah yang ada. Sedangkan bagi penjual model prediksi ini diharapkan bisa membantu penjual rumah yang kesulitan untuk menentukan harga rumah dengan harga yang berada di pasaran dan bisa mendapatkan keuntungan bagi penjual.
-  
+(Perlu Modif)
  
 ## Business Understanding
 
