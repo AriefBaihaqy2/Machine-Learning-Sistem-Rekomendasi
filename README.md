@@ -203,15 +203,19 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Collaborat
 
 ## Evaluasi Collaborative Filtering
 
-Adapun metrik evaluasi yang digunakan pada model Collaborative Filtering adalah Root Mean Squared Error (RMSE). Metode pengukuran ini berfungsi sebagai perkiraan nilai yang diamati dengan mengukur perbedaan nilai prediksi model. Root Mean Squared Error adalah hasil dari akar kuadrat dari Mean Squared Error. Keakuratan metode estimasi kesalahan pengukuran diwakili oleh nilai RMSE yang kecil. Semakin kecil (mendekati 0) nilai RMSE maka hasil prediksi akan semakin akurat
+Adapun metrik evaluasi yang digunakan pada model Collaborative Filtering adalah Root Mean Squared Error (RMSE). Metode pengukuran ini berfungsi sebagai perkiraan nilai yang diamati dengan mengukur perbedaan nilai prediksi model. Root Mean Squared Error adalah hasil dari akar kuadrat dari Mean Squared Error. Keakuratan metode estimasi kesalahan pengukuran diwakili oleh nilai RMSE yang kecil. Semakin kecil (mendekati 0) nilai RMSE maka hasil prediksi akan semakin akurat. Rumus metrik RMSE ditunjukkan pada gambar berikut:
+
+![image](https://user-images.githubusercontent.com/110958395/194405920-410f2583-fadc-41cb-9429-f20bf2306a78.png)
+
+Gambar 4. Rumus Metrik RMSE
 
 Melihat visualisasi proses training plot metrik evaluasi RMSE dengan matplotlib.
 
 ![image](https://user-images.githubusercontent.com/110958395/194392406-db867519-a312-4242-ab83-9c9b4f2f505e.png)
 
-Gambar 4. Visualisasi plot metrik evaluasi RMSE
+Gambar 5. Visualisasi plot metrik evaluasi RMSE
 
-Berdasarkan Gambar 4, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi.
+Berdasarkan Gambar 5, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi.
 
 
 ## Mendapatkan Rekomendasi Buku
@@ -220,9 +224,9 @@ Untuk mendapatkan rekomendasi buku, pertama mengambil sampel user secara acak da
 
 ![image](https://user-images.githubusercontent.com/110958395/194392908-f688e1c7-95a5-427c-a208-5a5a90e8c0b2.png)
 
-Gambar 5. Hasil Top 10 Recommendation
+Gambar 6. Hasil Top 10 Recommendation
 
-Berdasarkan Gambar 5 merupakan rekomendasi untuk user dengan id 8872. Dari output tersebut, dapat melakukan perbandingan antara Books with high ratings from user dan Top 10 Books recommendation untuk user.
+Berdasarkan Gambar 6 merupakan rekomendasi untuk user dengan id 8872. Dari output tersebut, dapat melakukan perbandingan antara Books with high ratings from user dan Top 10 Books recommendation untuk user.
 
     
 ## Referensi
