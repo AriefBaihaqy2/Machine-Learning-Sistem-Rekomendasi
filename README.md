@@ -211,13 +211,13 @@ Gambar 4. Rumus Metrik RMSE
 
 Berdasarkan Gambar 4, keterangan yang ada pada persamaan RMSE yaitu:
 
+n => Jumlah data
+
 i => Urutan Data
 
 ŷ => Nilai hasil prediksi
 
 y => Nilai hasil observasi
-
-n => Jumlah data
 
 Melihat visualisasi proses training plot metrik evaluasi RMSE dengan matplotlib.
 
