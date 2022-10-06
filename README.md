@@ -154,7 +154,26 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
    Pada tahap ini, membangun sistem rekomendasi sederhana berdasarkan judul buku yang tersedia menggunakan TF-IDF Vectorizer, selanjutnya melakukan fit pada judul buku dan ditransfotmasikan kedalam bentuk matriks yang kemudian menghasilkan vektor tf-idf dalam bentuk matriks.
    
 2. **Cosine Similarity**
-   Pada tahap ini akan menghitung derajat kesamaan (similarity degree) antar judul buku dengan teknik cosine similarity.
+   Pada tahap ini akan menghitung derajat kesamaan (similarity degree) antar judul buku dengan teknik cosine similarity, selanjutnya melihat matriks kesamaan setiap buku dengan menampilkan judul buku dalam 10 sampel kolom (axis=1) dan 10 sampel baris (axis=0).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
