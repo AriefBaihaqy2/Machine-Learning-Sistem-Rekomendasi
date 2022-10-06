@@ -194,7 +194,7 @@ Pada tahap ini, model menghitung skor kecocokan antara pengguna dan buku dengan 
 
 Melihat visualisasi proses training plot metrik evaluasi dengan matplotlib.
 
-![image](https://user-images.githubusercontent.com/110958395/194392108-1810360c-c1c7-4d78-bb5e-8cdd32d4fa1c.png)
+![image](https://user-images.githubusercontent.com/110958395/194392406-db867519-a312-4242-ab83-9c9b4f2f505e.png)
 
 Berdasarkan Gambar 3, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi.
 
