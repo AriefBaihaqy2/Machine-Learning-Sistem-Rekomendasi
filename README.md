@@ -241,4 +241,4 @@ Berdasarkan Gambar 6 merupakan rekomendasi untuk user dengan id 8872. Dari outpu
     
 ## Referensi
 
-Reyvan Maulid (2022). *Kriteria Jenis Teknik Analisis Data dalam Forecasting*. Diambil dari: https://www.dqlab.id/kriteria-jenis-teknik-analisis-data-dalam-forecasting. Diakses tanggal 06 Oktober 2022.
+Reyvan Maulid (2022). *Kriteria Jenis Teknik Analisis Data dalam Forecasting*. Diambil dari: https://www.dqlab.id/kriteria-jenis-teknik-analisis-data-dalam-forecasting. Diakses tanggal: 06 Oktober 2022.
