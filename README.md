@@ -176,7 +176,7 @@ Pada kasus ini, dilakukan uji coba untuk mencari kategori buku yang mirip dengan
 
 Gambar 2. Hasil Rekomendasi Buku
 
-Berdasarkan Gambar 2, dapat diketahui bahwa dari 11 buku yang direkomendasikan memiliki kemiripan dengan buku yang ditulis oleh Jennifer Drew.
+Berdasarkan Gambar 2, dapat diketahui bahwa dari 11 buku yang direkomendasikan memiliki kemiripan dengan buku yang ditulis oleh Jennifer Drew yang berjudul Hitched for the Holidays / A Groom in Her Stocking (Harlequin Duets, No. 90).
 
 
 ## Model Development dengan Collaborative Filtering
