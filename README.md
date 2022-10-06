@@ -156,7 +156,7 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
 2. **Cosine Similarity**
    Pada tahap ini akan menghitung derajat kesamaan (similarity degree) antar kategpri buku dengan teknik cosine similarity, selanjutnya melihat matriks kesamaan setiap kategori buku dengan menampilkan penulis buku dalam 10 sampel kolom (axis=1) dan 10 sampel baris (axis=0) yang dapat dilihat pada Gambar 1.
    
-   ![image](https://user-images.githubusercontent.com/110958395/194273397-ba6be757-34ec-4e59-bdb6-701c4ccee4c0.png)
+   ![image](https://user-images.githubusercontent.com/110958395/194296283-108704a9-18f2-4faf-b513-dc2f9accbebb.png)
    
    Gambar 1. Matriks Cosine Similarity
    
