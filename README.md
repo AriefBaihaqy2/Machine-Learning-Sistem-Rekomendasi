@@ -170,6 +170,12 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
 Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggunakan Top-N Recommendation untuk mengambil k dengan nilai similarity terbesar pada index matrix yang diberikan. Langkah pertama yaitu mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan yang kemudian dataframe akan diubah menjadi numpy, dengan menggunakan argpartition di ambil sejumlah nilai k tertinggi dari similarity, dalam kasus ini digunakan dataframe cosine similarity, Kemudian, mengambil data dari bobot (tingkat kesamaan) tertinggi ke terendah, kemudian menghapus judul buku agar nantinya judul buku yang dicari tidak muncul pada daftar rekomendasi buku.
 
 Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan Succulent Wild Woman
+
+![image](https://user-images.githubusercontent.com/110958395/194278413-fc9003b7-efb3-41b4-bd51-86999fc92450.png)
+
+Gambar 2. Hasil Rekomendasi Buku
+
+Berdasarkan Gambar 2, dapat diketahui bahwa dari 11 buku yang direkomendasikan memiliki kemiripan dengan buku dengan judul Succulent Wild Woman.
    
 
 
