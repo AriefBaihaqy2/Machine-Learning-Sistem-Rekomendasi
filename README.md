@@ -159,8 +159,18 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
    ![image](https://user-images.githubusercontent.com/110958395/194273397-ba6be757-34ec-4e59-bdb6-701c4ccee4c0.png)
    
    Gambar 1. Matriks Cosine Similarity
+   
+   Berdasarkan Gambar 1, dapat diketahui angka yang memiliki nilai lebih dari 0 mengindikasikan bahwa judul buku pada kolom X (horizontal) memiliki kemiripan dengan judul buku pada baris Y (vertikal). Sebagai contoh, buku The Signet Classic Book of Southern Short Stories teridentifikasi mirip dengan buku Classic Whodunits.
 
+3. **Mendapatkan Rekomendasi**
+   Pada tahap ini akan menghasilkan sejumlah buku yang akan direkomendasikan kepada pengguna dengan keluaran sistem rekomendasi buku berupa top-N recommendaation, oleh karena itu sistem akan memberikan sejumlah rekomendasi buku pada pengguna. Sebagai contoh, pengguna X pernah membaca buku The Signet Classic Book of Southern Short Stories. Kemudian, saat pengguna tersebut berencana untuk membaca buku lain, sistem akan merekomendasikan buku yang mirip yaitu Classic Whodunits. Rekomendasi kedua buku ini berdasarkan kesamaan yang dihitung dengan cosine similarity pada tahap sebelumnya.
+   
+## Evaluasi Content Based Filtering
 
+Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggunakan Top-N Recommendation untuk mengambil k dengan nilai similarity terbesar pada index matrix yang diberikan. Langkah pertama yaitu mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan yang kemudian dataframe akan diubah menjadi numpy, dengan menggunakan argpartition di ambil sejumlah nilai k tertinggi dari similarity, dalam kasus ini digunakan dataframe cosine similarity, Kemudian, mengambil data dari bobot (tingkat kesamaan) tertinggi ke terendah, kemudian menghapus judul buku agar nantinya judul buku yang dicari tidak muncul pada daftar rekomendasi buku.
+
+Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan Succulent Wild Woman
+   
 
 
 
