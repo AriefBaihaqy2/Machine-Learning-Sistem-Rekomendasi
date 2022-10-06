@@ -172,11 +172,11 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
 
 Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan buku yang berjudul Waking Up Screaming: Haunting Tales of Terror.
 
-![image](https://user-images.githubusercontent.com/110958395/194381370-47f7d885-652f-4c86-b9d8-fdcafb3a4110.png)
+![Screenshot 2022-10-07 003703](https://user-images.githubusercontent.com/110958395/194398408-11b7599c-ab18-418a-abfb-ef559e0a49a7.jpg)
 
 Gambar 2. Hasil Rekomendasi Buku
 
-Berdasarkan Gambar 2, dapat diketahui bahwa dari 11 buku yang direkomendasikan memiliki kemiripan dengan buku yang berjudul Waking Up Screaming: Haunting Tales of Terror.
+Berdasarkan Gambar 2, dapat diketahui bahwa dari 10 buku yang direkomendasikan memiliki kemiripan dengan buku yang berjudul Waking Up Screaming: Haunting Tales of Terror.
 
 
 ## Model Development dengan Collaborative Filtering
