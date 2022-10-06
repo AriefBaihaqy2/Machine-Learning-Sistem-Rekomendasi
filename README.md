@@ -31,7 +31,6 @@ Solusi yang dibuat yaitu dengan menggunakan 2 algoritma sistem rekomendasi pada 
   *Collaborative Filtering* bergantung pada pendapat komunitas pengguna. Algoritma ini tidak memerlukan atribut untuk setiap itemnya seperti pada sistem berbasis konten (*Content Based Filtering *). Algoritma ini digunakan untuk merekomendasikan buku kepada pengguna berdasarkan nilai rating buku tertinggi.
 
 
-
 ## Data Understanding
 
 Dataset yang digunakan pada proyek ini adalah dataset *Book Recommendation Dataset* yang didapat dari situs [Kaggle](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset). Pada dataset ini terdapat 3 berkas beformat csv yaitu: Books, Ratings, dan Users. Dari ketiga berkas tersebut akan dibuat variabel untuk memuat berbagai fitur didalamnya.
@@ -40,33 +39,91 @@ Dataset yang digunakan pada proyek ini adalah dataset *Book Recommendation Datas
 ## Exploratory Data Analysis - Univariate Analysis
 
 Variabel-variabel pada *Book Recommendation Dataset* adalah sebagai berikut:
-- Books: Merupakan informasi seputar buku yang didalamnya terdapat fitur: judul buku, penulis buku, tahun publikasi buku, dan penerbit.
-- Ratings: Berisi informasi penilaian terhadap buku. Penilaian (Book-Rating) bersifat eksplisit, dinyatakan dalam skala 1-10 (semakin tinggi nilai menunjukkan apresiasi yang lebih tinggi), atau implisit, yang dinyatakan dengan 0.
-- Users: Berisi informasi seputar data pengguna yang didalamnya terdapat fitur: ID user, lokasi, dan umur.
-Variabel yang akan di eksplorasi pada proyek ini adalah variabel Books dan Ratings. Sedangkan, variabel Users hanya digunakan untuk melihat bagaimana profile penguna.
+
+1. **Variabel Books**
+
+   Merupakan informasi seputar buku yang didalamnya terdapat fitur: judul buku, penulis buku, tahun publikasi buku, dan penerbit.
+
+   Tabel 1. Mengecek informasi pada variabel Books:
+
+   | Column              | Non-Null Count  | Dtype  |
+   |---------------------|-----------------|--------|
+   | ISBN                | 271360 non-null | object |
+   | Book-Title          | 271360 non-null | object |
+   | Book-Author         | 271359 non-null | object |
+   | Year-Of-Publication | 271360 non-null | object |
+   | Publisher           | 271358 non-null | object |
+   | Image-URL-S         | 271360 non-null | object |
+   | Image-URL-M         | 271360 non-null | object |
+   | Image-URL-L         | 271357 non-null | object |
+
+   Berdasarkan Tabel 1, dapat diketahui bahwa variabel Books memiliki kurang lebih 271359 entri. Terdapat 8 kolom disini, yaitu:
+
+   - ISBN (International Standard Book Number) adalah kode pengidentifikasian buku.
+   - Book-Title merupakan judul buku.
+   - Book-Author merupakan nama dari penulis buku.
+   - Year-Of-Publication merupakan tahun publikasi buku.
+   - Publisher merupakan pihak yang menerbitkan buku.
+   - Image-URL-S merupakan tautan dalam skala kecil (small).
+   - Image-URL-M merupakan tautan dalam skala sedang (medium).
+   - Image-URL-L merupakan tautan dalam skala besar (large).
+
+2. **Variabel Ratings**
+
+   Berisi informasi penilaian terhadap buku. Penilaian (Book-Rating) bersifat eksplisit, dinyatakan dalam skala 1-10 (semakin tinggi nilai menunjukkan apresiasi yang lebih tinggi), atau implisit, yang dinyatakan dengan 0.
+
+   Tabel 2. Mengecek informasi pada variabel Ratings:
+
+   | Column      | Non-Null Count   | Dtype  |
+   |-------------|------------------|--------|
+   | User-ID     | 1149780 non-null | int64  |
+   | ISBN        | 1149780 non-null | object |
+   | Book-Rating | 1149780 non-null | int64  |
+
+   Berdasarkan Tabel 2, dapat diketahui bahwa variabel Ratings memiliki banyak entri yaitu 1.149.780 entri. Trrdapat 3 kolom disini, yaitu:
+
+   - User-ID merupakan identitas pengguna.
+   - ISBN merupakan kode pengidentifikasian buku.
+   - Book-Rating metupakan informasi penilaian buku .
+
+   Tabel 3. Melihat distribusi rating pada variabel Ratings:
+
+   |       | User-ID        | Book-Rating    |
+   |-------|----------------|----------------|
+   | count | 1149780.000000 | 1149780.000000 |
+   | mean  | 140386.395126	 | 2.866950       |
+   | std   | 80562.277719	  |  3.854184      |
+   | min   | 2.000000	      | 0.000000       |
+   | 25%   | 70345.000000   | 0.000000       |
+   | 50%   | 141010.000000	 | 0.000000       |
+   | 75%   | 211028.000000	 | 7.000000       |
+   | max   | 278854.000000	 | 10.000000      |
+
+   Berdasarkan Tabel 3, dapat diketahui bahwa nilai maksimum Book-Rating adalah 10 dan nilai minimumnya adalah 0.
+   
+3. **Variabel Users**
+   
+   Berisi informasi seputar data pengguna yang didalamnya terdapat fitur: ID user, lokasi, dan umur.
+   
+   Tabel 4. Mengecek informasi pada variabel Users:
+   
+   | Column   | Non-Null Count  | Dtype  |
+   |----------|-----------------|--------|
+   | User-ID  | 278858 non-null | int64  |
+   | Location | 278858 non-null | object |
+   | Age      | 168096 non-null | float  |
+
+   
+Variabel yang akan di eksplorasi pada proyek ini adalah variabel Books dan Ratings. Sedangkan, variabel Users hanya digunakan untuk melihat bagaimana profile penguna saja.
 
 
 
-Tabel 1. Mengecek informasi pada dataset:
 
-| Column             | Non-Null Count | Dtype   |
-|--------------------|----------------|---------|
-| Posted On          | object         | object  |
-| BHK                | 4746 non-null  | int64   |
-| Rent               | 4746 non-null  | int64   |
-| Size               | 4746 non-null  | int64   |
-| Floor              | 4746 non-null  | object  |
-| Area Type          | 4746 non-null  | object  |
-| Area Locality      | 4746 non-null  | object  |
-| City               | 4746 non-null  | object  |
-| Furnishing Status  | 4746 non-null  | object  |
-| Tenant Preferred   | 4746 non-null  | object  |
-| Bathroom           | 4746 non-null  | int64   |
-| Point of Contact   | 4746 non-null  | object  |
 
-Pada Tabel 1 dapat disimpulkan bahwa:
--	Terdapat 8 kolom dengan tipe object, yaitu: Posted On, Floor, Area Type, Area Locality, City, Furnishing Status, Tenant Preferred, dan  Point of Contact. Kolom ini merupakan categorical features (fitur non-numerik).
--	Terdapat 4 kolom numerik dengan tipe data int64, yaitu: BHK, Rent, Size, dan Bathroom.
+
+
+
+
 
 Tabel 2. Mengecek deskripsi statistik data:
 
