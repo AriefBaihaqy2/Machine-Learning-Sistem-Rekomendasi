@@ -172,7 +172,7 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
 
 Pada kasus ini, dilakukan uji coba untuk mencari kategori buku yang mirip dengan buku yang ditulis oleh Jennifer Drew.
 
-![image](https://user-images.githubusercontent.com/110958395/194279311-351973cb-94d9-47cc-b6bd-9704ab723317.png)
+![image](https://user-images.githubusercontent.com/110958395/194297784-b1336908-d3b9-45a1-abf2-967de56846b0.png)
 
 Gambar 2. Hasil Rekomendasi Buku
 
