@@ -199,6 +199,11 @@ Melihat visualisasi proses training plot metrik evaluasi dengan matplotlib.
 Berdasarkan Gambar 3, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi.
 
 
+## Mendapatkan Rekomendasi Buku
+
+Untuk mendapatkan rekomendasi buku, pertama mengambil sampel user secara acak dan mendefinisikan variabel books_unreaded yang merupakan daftar buku yang belum pernah dibaca oleh pengguna, books_unreaded inilah yang akan menjadi buku yang direkomendasikan kepada pengguna. Sebelumnya, pengguna telah memberi rating pada beberapa buku yang telah mereka baca. Rating ini digunakan untuk membuat rekomendasi buku yang mungkin cocok untuk pengguna. Buku yang akan direkomendasikan tentulah buku yang belum pernah dibaca oleh pengguna. 
+
+
 i
 
 i
