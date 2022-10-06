@@ -171,7 +171,7 @@ Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggun
 
 Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan Succulent Wild Woman
 
-![image](https://user-images.githubusercontent.com/110958395/194278413-fc9003b7-efb3-41b4-bd51-86999fc92450.png)
+![image](https://user-images.githubusercontent.com/110958395/194279311-351973cb-94d9-47cc-b6bd-9704ab723317.png)
 
 Gambar 2. Hasil Rekomendasi Buku
 
