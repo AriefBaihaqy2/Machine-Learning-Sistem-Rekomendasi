@@ -117,28 +117,33 @@ Variabel yang akan di eksplorasi pada proyek ini adalah variabel Books dan Ratin
 
 
 ## Data Preprocessing
-Dapat dilihat sebelumnya pada bagian Exploratory Data Analysis bahwa sangat banyak entri pada masing-masing variabel, contohnya pada Variabel Ratings memiliki hingga 1.149.780 entri, dengan banyaknya entri akan memakan banyak penggunaan backend RAM gratis pada google colab, sehingga entri pada masing-masing variabel akan dikurangi menjadi 50.000 entri saja.
-
-Langkah selanjutnya adalah menghapus fitur pada variabel Books yaitu: Image-URL-S, Image-URL-M, dan Image-URL-L. Karena ketiga fitur tersebut tidak akan digunakan dan tidak memiliki pengaruh terhadap perekomendasian buku.
-
-Kurang proses penggabungan
+Dapat dilihat sebelumnya pada bagian Exploratory Data Analysis bahwa sangat banyak entri pada masing-masing variabel, contohnya pada Variabel Ratings memiliki hingga 1.149.780 entri, dengan banyaknya entri akan memakan banyak penggunaan backend RAM gratis pada google colab, sehingga entri pada masing-masing variabel akan dikurangi menjadi 50.000 entri saja. Kemudian melakukan proses penggabungan data berkas berdasarkan fitur-fitur yang memiliki keterkaitan. Langkah selanjutnya adalah menghapus fitur pada variabel Books yaitu: Image-URL-S, Image-URL-M, dan Image-URL-L. Karena ketiga fitur tersebut tidak akan digunakan dan tidak memiliki pengaruh terhadap perekomendasian buku.
 
 
 ## Data Preparation Model Content Based Filtering
 
-Tabel 5. Mengecek missing value setelah proses penggabungan
+1. Mengatasi Missing Value
 
-|                     |      |
-|---------------------|------|
-| User-ID             | 0    |
-| ISBN                | 0    |
-| Book-Rating         | 0    |
-| Book-Title          | 5287 |
-| Book-Author         | 5287 |
-| Year-Of-Publication | 5287 |
-| Publisher           | 5287 |
+   Tabel 5. Mengecek missing value setelah proses penggabungan
 
-Berdasarkan Tabel 5, dapat diketahui terdapat 5287 dari 20963 missing value pada fitur Book-Title (judul buku), Book-Author (penulis), Year-Of-Publication (tahun publikasi buku), dan Publisher (penerbit). Maka data yang memiliki missing value ini akan dihapus agar pembuatan model akan menjadi lebih baik dan dapat meningkatkan performa model.
+   | Column              |      |
+   |---------------------|------|
+   | User-ID             | 0    |
+   | ISBN                | 0    |
+   | Book-Rating         | 0    |
+   | Book-Title          | 5287 |
+   | Book-Author         | 5287 |
+   | Year-Of-Publication | 5287 |
+   | Publisher           | 5287 |
+
+   Berdasarkan Tabel 5, dapat diketahui terdapat 5287 dari 20963 missing value pada kolom Book-Title (judul buku), Book-Author (penulis), Year-Of-Publication (tahun publikasi buku), dan Publisher (penerbit). Maka data yang memiliki missing value ini akan dihapus agar pembuatan model akan menjadi lebih baik dan dapat meningkatkan performa model.
+
+2. Menghapus data duplikat
+   Menghapus data duplikat perlu dilakukan karena hanya akan digunakan data unik untuk dimasukkan ke dalam proses pemodelan. Oleh karena itu, perlu menghapus data yang duplikat. Dalam hal ini, kolom ISBN yang duplikat akan dibuang.
+    
+3. Langkah selanjutnya adalah melakukan konversi data series menjadi list untuk kemudian membuat dictionary untuk menentukan pasangan key-value pada data yang telah dikonversi menjadi list sebelumnya.
+
+## Data Preparation Model Collaborative Filtering
 
 
 
@@ -150,24 +155,7 @@ Berdasarkan Tabel 5, dapat diketahui terdapat 5287 dari 20963 missing value pada
 
 
 
-
-1. Encoding Fitur Kategori
-
-    Proses encoding fitur categorical menggunakan teknik one-hot-encoding dalam penerapannya untuk mendapatkan fitur  baru yang sesuai sehingga dapat mewakili variabel categorical. Dalam hal ini terdapat fitur categorical yaitu: Area Type, City, Furnishing Status, dan Tenant Preferred yang kemudian akan diubah menjadi numerical features.
-
-2. Reduksi Dimensi dengan PCA
-
-    Teknik Principal Component Analysis (PCA) digunakan untuk mereduksi dimensi/mengurangi jumlah fitur dengan tetap  mempertahankan informasi pada data.
-
-3. Train-Test-Split
-
-    Melakukan pembagian dataset menjadi data latih (train) dan data uji (test) dengan mempertahankan sebagian data  yang ada untuk menguji seberapa baik generalisasi model terhadap data baru. Sebaiknya pembagian data dilakukan sebelum proses transformasi data, sehingga dapat mengurangi potensi kebocoran data (data leakage). Dalam hal ini jumlah data sebesar 4.129 akan dibagi menjadi 3.922 data latih dan 207 data uji.
-
-4. Standarisasi
-
-    Teknik StandardScaler dari library Scikitlearn digunakan dalam tahapan transformasi data numerical. Proses  standarisasi mengubah nilai rata-rata (mean) menjadi 0 dan nilai standar deviasi menjadi 1.
-
-## Modeling
+## Modeling Content Based Filtering
 
 Dalam  mengembangkan model machine learning pada proyek ini digunakan 3 algoritma, yang kemudian akan dievaluasi performa dari masing-masing algoritma dan menentukan salah satu algoritma yang memiliki hasil terbaik dan dengan nilai error yang paling kecil. Ketiga algoritma yang akan digunakan, antara lain:
 
