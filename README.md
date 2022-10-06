@@ -168,7 +168,7 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
    
 ## Evaluasi Content Based Filtering
 
-   Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggunakan Top-N Recommendation untuk mengambil k dengan nilai similarity terbesar pada index matrix yang diberikan. Langkah pertama yaitu mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan yang kemudian dataframe akan diubah menjadi numpy, dengan menggunakan argpartition di ambil sejumlah nilai k tertinggi dari similarity, dalam kasus ini digunakan dataframe cosine similarity, Kemudian, mengambil data dari bobot (tingkat kesamaan) tertinggi ke terendah, kemudian menghapus judul buku agar nantinya output data judul buku yang dicari tidak muncul pada daftar rekomendasi buku.
+Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggunakan Top-N Recommendation untuk mengambil k dengan nilai similarity terbesar pada index matrix yang diberikan. Langkah pertama yaitu mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan yang kemudian dataframe akan diubah menjadi numpy, dengan menggunakan argpartition di ambil sejumlah nilai k tertinggi dari similarity, dalam kasus ini digunakan dataframe cosine similarity, Kemudian, mengambil data dari bobot (tingkat kesamaan) tertinggi ke terendah, kemudian menghapus judul buku agar nantinya output data judul buku yang dicari tidak muncul pada daftar rekomendasi buku.
 
 Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan buku yang berjudul Waking Up Screaming: Haunting Tales of Terror.
 
@@ -176,7 +176,12 @@ Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan bu
 
 Gambar 2. Hasil Rekomendasi Buku
 
-Berdasarkan Gambar 2, dapat diketahui bahwa dari 10 buku yang direkomendasikan memiliki kemiripan dengan buku yang berjudul Waking Up Screaming: Haunting Tales of Terror.
+Berdasarkan Gambar 2, dapat diketahui bahwa dari 10 buku yang direkomendasikan memiliki kemiripan dengan buku yang berjudul Waking Up Screaming: Haunting Tales of Terror. Dalam hal ini juga dapat diketahui dari 10 buku yang direkomendasikan, terdapat 8 buku yang relevan, jadi dapat disimpulkan precision pada sistem ini sebesar 80% yang mengacu pada rumus berikut:
+
+![image](https://user-images.githubusercontent.com/110958395/194400379-df1a09ee-72d7-461b-a1aa-99440a3f1fd0.png)
+
+Gambar 3. Rumus Recommender System Precision
+
 
 
 ## Model Development dengan Collaborative Filtering
@@ -201,7 +206,9 @@ Melihat visualisasi proses training plot metrik evaluasi dengan matplotlib.
 
 ![image](https://user-images.githubusercontent.com/110958395/194392406-db867519-a312-4242-ab83-9c9b4f2f505e.png)
 
-Berdasarkan Gambar 3, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi.
+Gambar 4. Visualisasi plot metrik evaluasi
+
+Berdasarkan Gambar 4, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi.
 
 
 ## Mendapatkan Rekomendasi Buku
@@ -210,9 +217,9 @@ Untuk mendapatkan rekomendasi buku, pertama mengambil sampel user secara acak da
 
 ![image](https://user-images.githubusercontent.com/110958395/194392908-f688e1c7-95a5-427c-a208-5a5a90e8c0b2.png)
 
-Gambar 4. Hasil Top 10 Recommendation
+Gambar 5. Hasil Top 10 Recommendation
 
-Berdasarkan Gambar 4 merupakan rekomendasi untuk user dengan id 8872. Dari output tersebut, dapat melakukan perbandingan antara Books with high ratings from user dan Top 10 Books recommendation untuk user.
+Berdasarkan Gambar 5 merupakan rekomendasi untuk user dengan id 8872. Dari output tersebut, dapat melakukan perbandingan antara Books with high ratings from user dan Top 10 Books recommendation untuk user.
 
     
 ## Referensi
