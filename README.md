@@ -240,4 +240,7 @@ Berdasarkan Gambar 6 merupakan rekomendasi untuk user dengan id 8872. Dari outpu
 
     
 ## Referensi
+
+[1] Reyvan Maulid (2022). *Kriteria Jenis Teknik Analisis Data dalam Forecasting. Diambil dari: https://www.dqlab.id/kriteria-jenis-teknik-analisis-data-dalam-forecasting*. Diakses tanggal 06 Oktober 2022.
+
 [1] Putri Choirunisa (2020). Implementasi Artificial Inteligence untuk Memprediksi Harga Penjualan Rumah Menggunakan Metode Random Forest dan Flask (Studi kasus: Rohini, India). https://dspace.uii.ac.id/handle/123456789/29813
