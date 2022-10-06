@@ -143,19 +143,20 @@ Dapat dilihat sebelumnya pada bagian Exploratory Data Analysis bahwa sangat bany
     
 3. Langkah selanjutnya adalah melakukan konversi data series menjadi list untuk kemudian membuat dictionary untuk menentukan pasangan key-value pada data yang telah dikonversi menjadi list sebelumnya.
 
-## Data Preparation Model Collaborative Filtering
+
+## Model Development dengan Content Based Filtering
 
 
+Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Based Filtering yaitu:
+
+1. **TF-IDF Vectorizer**
+
+   Pada tahap ini, membangun sistem rekomendasi sederhana berdasarkan judul buku yang tersedia menggunakan TF-IDF Vectorizer, selanjutnya melakukan fit pada judul buku dan ditransfotmasikan kedalam bentuk matriks yang kemudian menghasilkan vektor tf-idf dalam bentuk matriks.
+   
+2. **Cosine Similarity**
+   Pada tahap ini akan menghitung derajat kesamaan (similarity degree) antar judul buku dengan teknik cosine similarity.
 
 
-
-
-
-
-
-
-
-## Modeling Content Based Filtering
 
 Dalam  mengembangkan model machine learning pada proyek ini digunakan 3 algoritma, yang kemudian akan dievaluasi performa dari masing-masing algoritma dan menentukan salah satu algoritma yang memiliki hasil terbaik dan dengan nilai error yang paling kecil. Ketiga algoritma yang akan digunakan, antara lain:
 
