@@ -181,7 +181,13 @@ Berdasarkan Gambar 2, dapat diketahui bahwa dari 11 buku yang direkomendasikan m
 
 ## Model Development dengan Collaborative Filtering
 
+i
 
+i
+
+i
+
+i
 
 
 
