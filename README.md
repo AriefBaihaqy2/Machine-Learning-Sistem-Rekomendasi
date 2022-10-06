@@ -209,6 +209,14 @@ Adapun metrik evaluasi yang digunakan pada model Collaborative Filtering adalah 
 
 Gambar 4. Rumus Metrik RMSE
 
+i => Urutan Data
+
+ŷ => Nilai hasil prediksi
+
+y => Nilai hasil observasi
+
+n => Jumlah data
+
 Melihat visualisasi proses training plot metrik evaluasi RMSE dengan matplotlib.
 
 ![image](https://user-images.githubusercontent.com/110958395/194392406-db867519-a312-4242-ab83-9c9b4f2f505e.png)
