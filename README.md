@@ -209,6 +209,8 @@ Adapun metrik evaluasi yang digunakan pada model Collaborative Filtering adalah 
 
 Gambar 4. Rumus Metrik RMSE
 
+Berdasarkan Gambar 4, keterangan yang ada pada persamaan RMSE yaitu:
+
 i => Urutan Data
 
 ŷ => Nilai hasil prediksi
