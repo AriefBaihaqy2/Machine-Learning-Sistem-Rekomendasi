@@ -181,14 +181,19 @@ Berdasarkan Gambar 2, dapat diketahui bahwa dari 11 buku yang direkomendasikan m
 
 ## Model Development dengan Collaborative Filtering
 
-## Data Preparation Model Collaborative Filtering
-Tahap pertama dalam melakukan persiapan sebelum melakukan pemodelan adalah melakukan persiapan data Ratings untuk menyandikan (encode) fitur User-ID dan ISBN kedalam indeks integer, kemudian memetakan User-ID dan ISBN ke dataframe yang berkaitan, dan terakhir mengecek beberapa hal dalam data seperti jumlah user, jumlah buku, dan mengubah nilai rating menjadi float.
+Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Collaborative Filtering yaitu:
 
-## Membagi Data untuk Training dan Validasi
-Sebelum melakukan pelatihan model tahapan yang harus diselesaikan yaitu mengacak data Ratings terlebih dahulu agar pendistribusiannya menjadi random, kemudian dilanjutkan dengan memetakan (mapping) data user dan buku menjadi satu value terlebih dahulu, lalu membuat rating dalam skala 0 sampai 1 agar mudah dalam melakukan proses training, agar nantinya data akan siap untuk dimasukkan ke dalam model, dan terakhir melakukan split data untuk membagi data menjadi 80% data train dan 20% data validasi.
+1. **Data Preparation Model Collaborative Filtering**
+   
+   Tahap pertama dalam melakukan persiapan sebelum melakukan pemodelan adalah melakukan persiapan data Ratings untuk menyandikan (encode) fitur User-ID dan ISBN kedalam indeks integer, kemudian memetakan User-ID dan ISBN ke dataframe yang berkaitan, dan terakhir mengecek beberapa hal dalam data seperti jumlah user, jumlah buku, dan mengubah nilai rating menjadi float.
 
-## Proses Training
-Pada tahap ini, model menghitung skor kecocokan antara pengguna dan buku dengan teknik embedding menggunakan class RecommenderNet. Pertama, melakukan proses embedding terhadap data user dan buku. Selanjutnya, melakukan operasi perkalian dot product antara embedding user dan buku. Selain itu, juga menambahkan bias untuk setiap user dan buku. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan proses compile terhadap model. Model ini menggunakan Binary Crossentropy untuk menghitung loss function, Adam (Adaptive Moment Estimation) sebagai optimizer, dan root mean squared error (RMSE) sebagai metrics evaluation.
+2. **Membagi Data untuk Training dan Validasi**
+   
+   Sebelum melakukan pelatihan model tahapan yang harus diselesaikan yaitu mengacak data Ratings terlebih dahulu agar pendistribusiannya menjadi random, kemudian dilanjutkan dengan memetakan (mapping) data user dan buku menjadi satu value terlebih dahulu, lalu membuat rating dalam skala 0 sampai 1 agar mudah dalam melakukan proses training, agar nantinya data akan siap untuk dimasukkan ke dalam model, dan terakhir melakukan split data untuk membagi data menjadi 80% data train dan 20% data validasi.
+
+3. **Proses Training**
+   
+   Pada tahap ini, model menghitung skor kecocokan antara pengguna dan buku dengan teknik embedding menggunakan class RecommenderNet. Pertama, melakukan proses embedding terhadap data user dan buku. Selanjutnya, melakukan operasi perkalian dot product antara embedding user dan buku. Selain itu, juga menambahkan bias untuk setiap user dan buku. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan proses compile terhadap model. Model ini menggunakan Binary Crossentropy untuk menghitung loss function, Adam (Adaptive Moment Estimation) sebagai optimizer, dan root mean squared error (RMSE) sebagai metrics evaluation.
 
 ## Evaluasi Collaborative Filtering
 
