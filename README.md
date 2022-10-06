@@ -200,13 +200,16 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Collaborat
    
    Pada tahap ini, model menghitung skor kecocokan antara pengguna dan buku dengan teknik embedding menggunakan class RecommenderNet. Pertama, melakukan proses embedding terhadap data user dan buku. Selanjutnya, melakukan operasi perkalian dot product antara embedding user dan buku. Selain itu, juga menambahkan bias untuk setiap user dan buku. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan proses compile terhadap model. Model ini menggunakan Binary Crossentropy untuk menghitung loss function, Adam (Adaptive Moment Estimation) sebagai optimizer, dan root mean squared error (RMSE) sebagai metrics evaluation.
 
+
 ## Evaluasi Collaborative Filtering
 
-Melihat visualisasi proses training plot metrik evaluasi dengan matplotlib.
+Adapun metrik evaluasi yang digunakan pada model Collaborative Filtering adalah Root Mean Squared Error (RMSE), Metode pengukuran ini berfungsi sebagai perkiraan nilai yang diamati dengan mengukur perbedaan nilai prediksi model. Root mean squared error adalah hasil dari akar kuadrat dari mean squared error. Keakuratan metode estimasi kesalahan pengukuran diwakili oleh nilai RMSE yang kecil. Semakin kecil (mendekati 0) nilai RMSE maka hasil prediksi akan semakin akurat
+
+Melihat visualisasi proses training plot metrik evaluasi RMSE dengan matplotlib.
 
 ![image](https://user-images.githubusercontent.com/110958395/194392406-db867519-a312-4242-ab83-9c9b4f2f505e.png)
 
-Gambar 4. Visualisasi plot metrik evaluasi
+Gambar 4. Visualisasi plot metrik evaluasi RMSE
 
 Berdasarkan Gambar 4, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi.
 
