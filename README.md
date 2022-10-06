@@ -201,122 +201,14 @@ Berdasarkan Gambar 3, dapat diketahui proses training model cukup smooth pada ep
 
 ## Mendapatkan Rekomendasi Buku
 
-Untuk mendapatkan rekomendasi buku, pertama mengambil sampel user secara acak dan mendefinisikan variabel books_unreaded yang merupakan daftar buku yang belum pernah dibaca oleh pengguna, books_unreaded inilah yang akan menjadi buku yang direkomendasikan kepada pengguna. Sebelumnya, pengguna telah memberi rating pada beberapa buku yang telah mereka baca. Rating ini digunakan untuk membuat rekomendasi buku yang mungkin cocok untuk pengguna. Buku yang akan direkomendasikan tentulah buku yang belum pernah dibaca oleh pengguna. 
+Untuk mendapatkan rekomendasi buku, pertama mengambil sampel user secara acak dan mendefinisikan variabel books_unreaded yang merupakan daftar buku yang belum pernah dibaca oleh pengguna, books_unreaded inilah yang akan menjadi buku yang direkomendasikan kepada pengguna. Sebelumnya, pengguna telah memberi rating pada beberapa buku yang telah mereka baca. Rating ini digunakan untuk membuat rekomendasi buku yang mungkin cocok untuk pengguna. Buku yang akan direkomendasikan tentulah buku yang belum pernah dibaca oleh pengguna.
 
+![image](https://user-images.githubusercontent.com/110958395/194392908-f688e1c7-95a5-427c-a208-5a5a90e8c0b2.png)
 
-i
+Gambar 4. Hasil Top 10 Recommendation
 
-i
+Berdasarkan Gambar 4 merupakan rekomendasi untuk user dengan id 8872. Dari output tersebut, dapat melakukan perbandingan antara Books with high ratings from user dan Top 10 Books recommendation untuk user.
 
-i
-
-i
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Dalam  mengembangkan model machine learning pada proyek ini digunakan 3 algoritma, yang kemudian akan dievaluasi performa dari masing-masing algoritma dan menentukan salah satu algoritma yang memiliki hasil terbaik dan dengan nilai error yang paling kecil. Ketiga algoritma yang akan digunakan, antara lain:
-
--	K-Nearest Neighbor (KNN)
-
-    Pada algortima ini menggunakan kesamaan fitur untuk memprediksi nilai dari setiap data yang baru. KNN bekerja     dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat. Dalam pemilihan k harus hati-hati karena apabila memilih k yang terlalu rendah, maka akan menghasilkan model yang overfit dan hasil dari prediksinya akan memiliki varians yang tinggi. Dan jika memilih k yang terlalu tinggi, maka akan menghasilkan model yang underfitt dan hasil dari prediksinya akan memiliki bias yang tinggi. Kelebihan dari algoritma KNN ini relatif sederhana dibandingkan dengan algoritma lain, mudah dipahami dan digunakan. Algoritma KNN memiliki kekurangan jika dihadapkan pada jumlah fitur atau dimensi besar yang biasa disebut curse of dimensionality. Dalam melakukan pemodelan pada proyek ini didapatkan hasil akurasi data latih sebesar 0.830. Adapun parameter dan nilai yang digunakan dalam melakukan pemodelan pada algoritma ini yaitu:
     
-    - n_neighbors = 8
-      
-      Parameter n_neighbors digunakan untuk menentukan jumlah tetangga terdekat (dengan k adalah sebuah angka positif).
-
--	Random Forest 
-
-    Algoritma Random Forest adalah salah satu algoritma supervised learning. Algoritma ini disusun dari banyak    algoritma pohon (decision tree) yang pembagian data dan fiturnya dipilih secara acak. Kelebihan dari algoritma Random Forest adalah algoritma ini sering digunakan karena cukup sederhana tetapi memiliki stabilitas yang mumpuni, dan algoritma ini termasuk kedalam kategori ensemble (group) learning yang merupakan model prediksi yang terdiri dari beberapa model dan bekerja secara bersama-sama, sehingga tingkat keberhasilan akan lebih tinggi dibanding model yang bekerja sendirian. Algoritma Random Forest ini memiliki kekurangan dalam menentukan nilai parameternya harus benar-benar tepat untuk data. Dalam melakukan pemodelan pada proyek ini didapatkan hasil akurasi data latih sebesar 0.992. Adapun parameter dan nilai yang digunakan dalam melakukan pemodelan pada algoritma ini yaitu:
-    
-    - n_estimators = 50 
-      
-      Parameter n_estimators digunakan untuk menentukan jumlah pohon di forest.
-      
-    - max_depth = 8
-    
-      Parameter max_depth digunakan untuk menentukan kedalaman atau panjang pohon. Merupakan ukuran seberapa banyak pohon dapat membelah (splitting) untuk membagi setiap node kedalam jumlah pengamatan yang diinginkan.
-      
-    - random_state = 33
-    
-      Parameter random_state digunakan untuk mengontrol random number generator yang digunakan.
-      
-    - n_jobs = -1 
-      
-      Parameter n_jobs digunakan untuk menentukan jumlah job (pekerjaan) yang digunakan secara paralel. Merupakan komponen untuk mengontrol thread atau proses yang berjalan secara paralel.
-
--	Boosting Algorithm
-
-    Boosting juga merupakan metode ensemble learning, perbedaannya dengan model Random Forest adalah model dilatih secara berurutan atau dalam proses yang iteratif. Algoritma yang menggunaakn teknik boosting bertugas memperbaiki kesalahan dari model pertama yang telah dibuat. Kelebihan dari algoritma ini adalah algoritma ini berfungsi untuk meningkatkan performa atau akurasi prediksi dengan cara menggabungkan beberapa model sederhana dan dianggap lemah sehingga membentuk suatu model yang kuat. Dalam melakukan pemodelan pada proyek ini didapatkan hasil akurasi data latih sebesar 0.851. Adapun parameter dan nilai yang digunakan dalam melakukan pemodelan pada algoritma ini yaitu:
-    
-    - learning_rate = 0.05
-      
-      Bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting.
-      
-    - n_estimators = 150
-      
-      Parameter n_estimators digunakan untuk memperkuat kontribusi pada setiap regresor.
-      
-    - random_state = 55
-      
-      Parameter random_state digunakan untuk mengontrol random number generator yang digunakan.
-      
-Sehingga dalam pembuatan model machine learning pada proyek ini performa terbaik ditunjukkan oleh algoritma Random Forest yang memiliki hasil akurasi sebesar 0.992.
-
-
-## Evaluation
-
-Metrik yang akan digunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi. MSE didefinisikan dalam persamaan yang dapat dilihat pada Gambar 9:
-
-![13  image](https://user-images.githubusercontent.com/110958395/192091611-00955e63-4b7f-404c-8196-becad93dc8f0.png)
-
-Gambar 9. Persamaan MSE.
-
-Berdasarkan Gambar 9. Keterangan yang ada dalam persamaan MSE yaitu:
-
-N = jumlah dataset
-
-yi = nilai sebenarnya
-
-y_pred = nilai prediksi
-
-- Tabel 5. Hasil evaluasi MSE pada data latih dan data test adalah sebagai berikut:
-    
-  |          | train        | test         |
-  |----------|--------------|--------------| 
-  | KNN      | 22882.422789 | 28096.473822 |
-  | RF       | 677.232434   | 1202.718556  |
-  | Boosting | 23968.08805	| 24587.114802 |
-
-- Hasil evaluasi plot metrik MSE dengan bar chart dapat dilihat pada Gambar 10:
-
-    ![15  image](https://user-images.githubusercontent.com/110958395/192092719-39d3707d-1026-460e-9218-b1d1fc477fec.png)
-    
-    Gambar 10. Plot metrik MSE.
-
-    Berdasarkan Gambar 10. Terlihat bahwa algoritma model Random Forest (RF) memiliki hasil yang paling baik dibandingkan dengan algoritma model Boosting dan KNN. Hal ini ditunjukkan karena hasil pengujian model Random Forest memiliki nilai error terkecil dibandingkan dengan dua algoritma lainnya yang memiliki angka error yang besar diatas 20.000.
-
-- Tabel 6. Membuat prediksi dari data uji untuk melakukan pengujian:
-
-    |          | y_true	| prediksi_KNN | prediksi_RF | prediksi_Boosting |
-    |----------|--------|--------------|-------------|-------------------| 
-    | 3821      | 14000 | 14875.0      | 13911.1	   | 15402.5           |
-
-    Terlihat pada Tabel 6, bahwa prediksi dengan algoritma Random Forest (RF) pada kolom "prediksi_RF" memberikan nilai yang paling mendekati dengan nilai pada kolom "y_true".
-    
- ## Referensi
+## Referensi
 [1] Putri Choirunisa (2020). Implementasi Artificial Inteligence untuk Memprediksi Harga Penjualan Rumah Menggunakan Metode Random Forest dan Flask (Studi kasus: Rohini, India). https://dspace.uii.ac.id/handle/123456789/29813
