@@ -1,29 +1,33 @@
 # Laporan Proyek Machine Learning - Imam Arief Al Baihaqy
 
-## Domain Proyek (Perlu Modif)
+## Project Overview
 
-### Latar Belakang
-
-Rumah merupakan kebutuhan primer bagi manusia. Setiap orang tentu punya rumah ideal yang mereka impikan. Apalagi dengan semakin lengkapnya fasilitas yang ditawarkan oleh developer properti seperti luas rumah, jumlah kamar tidur, jumlah kamar mandi, dll. Tentunya dengan kriteria yang ditawarkan tersebut mempengaruhi terhadap nilai harga sewa rumah. 
-
-Kurangnya media informasi menyulitkan dalam mendapatkan informasi harga sewa rumah. Sehingga diperlukan model untuk dapat memprediksi harga sewa rumah untuk mempermudah dalam bertransaksi. 
-
-Bagi calon konsumen tentunya sangat konservatif mengenai harga dan tipe rumah yang diinginkan. Sehingga dibutuhkan model prediksi yang bisa digunakan untuk mengetahui kisaran harga sewa rumah yang diinginkan konsumen sesuai kriteria tipe rumah yang ada. Sedangkan bagi penjual model prediksi ini diharapkan bisa membantu penjual rumah yang kesulitan untuk menentukan harga rumah dengan harga yang berada di pasaran dan bisa mendapatkan keuntungan bagi penjual.
-(Perlu Modif)
+Sistem rekomendasi buku merupakan sistem yang merekomendasikan buku kepda pengguna. Sistem rekomendasi yang dibuat ini berdasarkan dengan preferensi kesukaan pengguna pada masa lalu dan rating dari buku yang ada.
+Dengan adanya sistem rekomendasi ini akan bermanfaat untuk meningkatkan keuntungan dari pembelian barang yang berupa buku atau juga bisa diterapkan pada perpustakaan agar pengguna mendapatkan rekomendasi buku yang sesuai dengan minatnya sehingga dapat menentukan pilihan dan dapat meningkatkan minat baca pangguna. 
  
 ## Business Understanding
 
 ### Problem Statements
 
-- Fitur apa yang paling berpengaruh terhadap harga sewa rumah?
-- Berapakah harga pasar sewa rumah dengan karakteristik atau fitur yang tertentu?
+- Bagaimana cara merekomendasikan buku yang mirip dengan buku yang disukai pengguna di masa lalu?
+- Bagaimana cara merekomendasikan buku yang mungkin disukai pengguna berdasarkan preferensi pengguna lain?
 
 ### Goals
 
-- Mengetahui fitur yang paling berkorelasi dengan harga sewa rumah
-- Membuat model machine learning yang dapat memprediksi harga sewa rumah seakurat mungkin berdasarkan fitur-fitur yang ada
+- Menghasilkan sejumlah rekomendasi buku yang mirip dengan buku yang disukai pengguna di masa lalu dengan teknik algoritma *Content Based Filtering*.
+- Menghasilkan sejumlah rekomendasi buku yang belum pernah dibaca sebelumnya dan mungkin disukai pengguna berdasarkan preferensi pengguna lain dengan teknik algoritma *Collaborative Filtering*.
+
 
 ### Solution statements
+
+Solusi yang dibuat yaitu dengan menggunakan 2 algoritma sistem rekomendasi pada Machine Learning. Adapun kedua algoritma tersebut yaitu:
+
+    - Content Based Filtering 
+    *Content Based Filtering* mempelajari profil minat pengguna baru berdasarkan data dari objek yang telah dinilai pengguna. Algoritma ini bekerja dengan menyarankan konten/item serupa yang pernah disukai di masa lalu atau sedang dilihat di masa kini kepada pengguna. Semakin banyak informasi yang diberikan pengguna, semakin baik akurasi sistem rekomendasi. Algortima ini akan digunakan untuk merekomendasikan buku yang akan dibaca berdasarkan buku lain yang pernah dibaca pengguna di masa lalu.
+    
+    - Collaborative Filtering
+    *Collaborative Filtering* bergantung pada pendapat komunitas pengguna. Algoritma ini tidak memerlukan atribut untuk setiap itemnya seperti pada sistem berbasis konten (*Content Based Filtering *). Algoritma ini digunakan untuk merekomendasikan buku kepada pengguna berdasarkan nilai rating buku tertinggi.
+
 
 - Melakukan Exploratory Data Analysis deskripsi variabel terhadap dataset, melihat apakah terdapat missing value dan outliers dengan menganalisa visualisasi dataset dan mengetahui fitur yang paling berkolerasi terhadap harga sewa rumah. 
 - Menggunakan 3 algoritma berbeda untuk membandingkan algoritma yang memiliki tingkat error paling kecil yang kemudian menjadi algoritma rekomendasi untuk digunakan sebagai prediksi harga sewa rumah, adapun ketiga algoritma tersebut adalah:
