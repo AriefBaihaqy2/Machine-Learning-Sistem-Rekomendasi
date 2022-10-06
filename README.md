@@ -151,16 +151,16 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
 
 1. **TF-IDF Vectorizer**
 
-   Pada tahap ini, membangun sistem rekomendasi sederhana berdasarkan judul buku yang tersedia menggunakan TF-IDF Vectorizer, selanjutnya melakukan fit pada judul buku dan ditransfotmasikan kedalam bentuk matriks yang kemudian menghasilkan vektor tf-idf dalam bentuk matriks.
+   Pada tahap ini, membangun sistem rekomendasi sederhana berdasarkan kategori buku yang tersedia menggunakan TF-IDF Vectorizer, selanjutnya melakukan fit pada judul buku dan ditransfotmasikan kedalam bentuk matriks yang kemudian menghasilkan vektor tf-idf dalam bentuk matriks.
    
 2. **Cosine Similarity**
-   Pada tahap ini akan menghitung derajat kesamaan (similarity degree) antar judul buku dengan teknik cosine similarity, selanjutnya melihat matriks kesamaan setiap buku dengan menampilkan judul buku dalam 10 sampel kolom (axis=1) dan 10 sampel baris (axis=0) yang dapat dilihat pada Gambar 1.
+   Pada tahap ini akan menghitung derajat kesamaan (similarity degree) antar kategpri buku dengan teknik cosine similarity, selanjutnya melihat matriks kesamaan setiap kategori buku dengan menampilkan penulis buku dalam 10 sampel kolom (axis=1) dan 10 sampel baris (axis=0) yang dapat dilihat pada Gambar 1.
    
    ![image](https://user-images.githubusercontent.com/110958395/194273397-ba6be757-34ec-4e59-bdb6-701c4ccee4c0.png)
    
    Gambar 1. Matriks Cosine Similarity
    
-   Berdasarkan Gambar 1, dapat diketahui angka yang memiliki nilai lebih dari 0 mengindikasikan bahwa judul buku pada kolom X (horizontal) memiliki kemiripan dengan judul buku pada baris Y (vertikal). Sebagai contoh, buku The Signet Classic Book of Southern Short Stories teridentifikasi mirip dengan buku Classic Whodunits.
+   Berdasarkan Gambar 1, dapat diketahui angka yang memiliki nilai lebih dari 0 mengindikasikan kemiripan kategori buku yang ditulis oleh masing-masing penulis. Dalam hal ini penulis buku pada kolom X (horizontal) memiliki kemiripan dengan penulis buku pada baris Y (vertikal). Sebagai contoh, buku yang ditulis oleh Patrick Suskind terindikasi mirip dengan buku yang ditulis oleh Oscar Wilde dan J. R. R. Tolkien.
 
 3. **Mendapatkan Rekomendasi**
    Pada tahap ini akan menghasilkan sejumlah buku yang akan direkomendasikan kepada pengguna dengan keluaran sistem rekomendasi buku berupa top-N recommendaation, oleh karena itu sistem akan memberikan sejumlah rekomendasi buku pada pengguna. Sebagai contoh, pengguna X pernah membaca buku The Signet Classic Book of Southern Short Stories. Kemudian, saat pengguna tersebut berencana untuk membaca buku lain, sistem akan merekomendasikan buku yang mirip yaitu Classic Whodunits. Rekomendasi kedua buku ini berdasarkan kesamaan yang dihitung dengan cosine similarity pada tahap sebelumnya.
