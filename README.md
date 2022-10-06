@@ -170,13 +170,13 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
 
    Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggunakan Top-N Recommendation untuk mengambil k dengan nilai similarity terbesar pada index matrix yang diberikan. Langkah pertama yaitu mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan yang kemudian dataframe akan diubah menjadi numpy, dengan menggunakan argpartition di ambil sejumlah nilai k tertinggi dari similarity, dalam kasus ini digunakan dataframe cosine similarity, Kemudian, mengambil data dari bobot (tingkat kesamaan) tertinggi ke terendah, kemudian menghapus penulis buku agar nantinya output data penulis buku beserta judul bukunya yang dicari tidak muncul pada daftar rekomendasi buku.
 
-Pada kasus ini, dilakukan uji coba untuk mencari kategori buku yang mirip dengan buku yang ditulis oleh Jennifer Drew.
+Pada kasus ini, dilakukan uji coba untuk mencari kategori buku yang mirip dengan buku yang ditulis oleh Jennifer Drew berjudul Hitched for the Holidays / A Groom in Her Stocking (Harlequin Duets, No. 90).
 
 ![image](https://user-images.githubusercontent.com/110958395/194297784-b1336908-d3b9-45a1-abf2-967de56846b0.png)
 
 Gambar 2. Hasil Rekomendasi Buku
 
-Berdasarkan Gambar 2, dapat diketahui bahwa dari 11 buku yang direkomendasikan memiliki kemiripan dengan buku yang ditulis oleh Jennifer Drew yang berjudul Hitched for the Holidays / A Groom in Her Stocking (Harlequin Duets, No. 90).
+Berdasarkan Gambar 2, dapat diketahui bahwa dari 11 buku yang direkomendasikan memiliki kemiripan dengan buku yang ditulis oleh Jennifer Drew.
 
 
 ## Model Development dengan Collaborative Filtering
