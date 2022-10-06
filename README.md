@@ -146,7 +146,6 @@ Dapat dilihat sebelumnya pada bagian Exploratory Data Analysis bahwa sangat bany
 
 ## Model Development dengan Content Based Filtering
 
-
 Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Based Filtering yaitu:
 
 1. **TF-IDF Vectorizer**
@@ -154,6 +153,7 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
    Pada tahap ini, membangun sistem rekomendasi sederhana berdasarkan kategori buku yang tersedia menggunakan TF-IDF Vectorizer, selanjutnya melakukan fit pada judul buku dan ditransfotmasikan kedalam bentuk matriks yang kemudian menghasilkan vektor tf-idf dalam bentuk matriks.
    
 2. **Cosine Similarity**
+
    Pada tahap ini akan menghitung derajat kesamaan (similarity degree) antar kategpri buku dengan teknik cosine similarity, selanjutnya melihat matriks kesamaan setiap kategori buku dengan menampilkan penulis buku dalam 10 sampel kolom (axis=1) dan 10 sampel baris (axis=0) yang dapat dilihat pada Gambar 1.
    
    ![image](https://user-images.githubusercontent.com/110958395/194296283-108704a9-18f2-4faf-b513-dc2f9accbebb.png)
@@ -163,20 +163,23 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
    Berdasarkan Gambar 1, dapat diketahui angka yang memiliki nilai lebih dari 0 mengindikasikan kemiripan kategori buku yang ditulis oleh masing-masing penulis. Dalam hal ini penulis buku pada kolom X (horizontal) memiliki kemiripan dengan penulis buku pada baris Y (vertikal). Sebagai contoh, buku yang ditulis oleh Patrick Suskind terindikasi mirip dengan buku yang ditulis oleh Oscar Wilde dan J. R. R. Tolkien.
 
 3. **Mendapatkan Rekomendasi**
-   Pada tahap ini akan menghasilkan sejumlah buku yang akan direkomendasikan kepada pengguna dengan keluaran sistem rekomendasi buku berupa top-N recommendaation, oleh karena itu sistem akan memberikan sejumlah rekomendasi buku pada pengguna. Sebagai contoh, pengguna X pernah membaca buku The Signet Classic Book of Southern Short Stories. Kemudian, saat pengguna tersebut berencana untuk membaca buku lain, sistem akan merekomendasikan buku yang mirip yaitu Classic Whodunits. Rekomendasi kedua buku ini berdasarkan kesamaan yang dihitung dengan cosine similarity pada tahap sebelumnya.
+   
+   Pada tahap ini akan menghasilkan sejumlah buku yang akan direkomendasikan kepada pengguna dengan keluaran sistem rekomendasi buku berupa top-N recommendaation, oleh karena itu sistem akan memberikan sejumlah rekomendasi buku pada pengguna. Sebagai contoh, pengguna X pernah membaca buku yang ditulis oleh Patrick Suskind. Kemudian, saat pengguna tersebut berencana untuk membaca buku lain, sistem akan merekomendasikan buku yang ditulis oleh penulis lain yang memiliki kategori yang mirip dengan buku yang sebelumnya pernah dibaca oleh pengguna. Rekomendasi kedua buku ini berdasarkan kesamaan yang dihitung dengan cosine similarity pada tahap sebelumnya.
    
 ## Evaluasi Content Based Filtering
 
-Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggunakan Top-N Recommendation untuk mengambil k dengan nilai similarity terbesar pada index matrix yang diberikan. Langkah pertama yaitu mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan yang kemudian dataframe akan diubah menjadi numpy, dengan menggunakan argpartition di ambil sejumlah nilai k tertinggi dari similarity, dalam kasus ini digunakan dataframe cosine similarity, Kemudian, mengambil data dari bobot (tingkat kesamaan) tertinggi ke terendah, kemudian menghapus judul buku agar nantinya judul buku yang dicari tidak muncul pada daftar rekomendasi buku.
+   Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggunakan Top-N Recommendation untuk mengambil k dengan nilai similarity terbesar pada index matrix yang diberikan. Langkah pertama yaitu mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan yang kemudian dataframe akan diubah menjadi numpy, dengan menggunakan argpartition di ambil sejumlah nilai k tertinggi dari similarity, dalam kasus ini digunakan dataframe cosine similarity, Kemudian, mengambil data dari bobot (tingkat kesamaan) tertinggi ke terendah, kemudian menghapus penulis buku agar nantinya output data penulis buku beserta judul bukunya yang dicari tidak muncul pada daftar rekomendasi buku.
 
-Pada kasus ini, dilakukan uji coba untuk mencari buku yang mirip dengan judul buku Succulent Wild Woman
+Pada kasus ini, dilakukan uji coba untuk mencari kategori buku yang mirip dengan buku yang ditulis oleh Jennifer Drew.
 
 ![image](https://user-images.githubusercontent.com/110958395/194279311-351973cb-94d9-47cc-b6bd-9704ab723317.png)
 
 Gambar 2. Hasil Rekomendasi Buku
 
-Berdasarkan Gambar 2, dapat diketahui bahwa dari 11 buku yang direkomendasikan memiliki kemiripan dengan buku berjudul Succulent Wild Woman.
-   
+Berdasarkan Gambar 2, dapat diketahui bahwa dari 11 buku yang direkomendasikan memiliki kemiripan dengan buku yang ditulis oleh Jennifer Drew.
+
+
+## Model Development dengan Collaborative Filtering
 
 
 
