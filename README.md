@@ -22,41 +22,29 @@ Dengan adanya sistem rekomendasi ini akan bermanfaat untuk meningkatkan keuntung
 
 Solusi yang dibuat yaitu dengan menggunakan 2 algoritma sistem rekomendasi pada Machine Learning. Adapun kedua algoritma tersebut yaitu:
 
-    - Content Based Filtering 
-    *Content Based Filtering* mempelajari profil minat pengguna baru berdasarkan data dari objek yang telah dinilai pengguna. Algoritma ini bekerja dengan menyarankan konten/item serupa yang pernah disukai di masa lalu atau sedang dilihat di masa kini kepada pengguna. Semakin banyak informasi yang diberikan pengguna, semakin baik akurasi sistem rekomendasi. Algortima ini akan digunakan untuk merekomendasikan buku yang akan dibaca berdasarkan buku lain yang pernah dibaca pengguna di masa lalu.
+- Content Based Filtering 
+
+  *Content Based Filtering* mempelajari profil minat pengguna baru berdasarkan data dari objek yang telah dinilai pengguna. Algoritma ini bekerja dengan menyarankan konten/item serupa yang pernah disukai di masa lalu atau sedang dilihat di masa kini kepada pengguna. Semakin banyak informasi yang diberikan pengguna, semakin baik akurasi sistem rekomendasi. Algortima ini akan digunakan untuk merekomendasikan buku yang akan dibaca berdasarkan buku lain yang pernah dibaca pengguna di masa lalu.
     
-    - Collaborative Filtering
-    *Collaborative Filtering* bergantung pada pendapat komunitas pengguna. Algoritma ini tidak memerlukan atribut untuk setiap itemnya seperti pada sistem berbasis konten (*Content Based Filtering *). Algoritma ini digunakan untuk merekomendasikan buku kepada pengguna berdasarkan nilai rating buku tertinggi.
+- Collaborative Filtering
 
+  *Collaborative Filtering* bergantung pada pendapat komunitas pengguna. Algoritma ini tidak memerlukan atribut untuk setiap itemnya seperti pada sistem berbasis konten (*Content Based Filtering *). Algoritma ini digunakan untuk merekomendasikan buku kepada pengguna berdasarkan nilai rating buku tertinggi.
 
-- Melakukan Exploratory Data Analysis deskripsi variabel terhadap dataset, melihat apakah terdapat missing value dan outliers dengan menganalisa visualisasi dataset dan mengetahui fitur yang paling berkolerasi terhadap harga sewa rumah. 
-- Menggunakan 3 algoritma berbeda untuk membandingkan algoritma yang memiliki tingkat error paling kecil yang kemudian menjadi algoritma rekomendasi untuk digunakan sebagai prediksi harga sewa rumah, adapun ketiga algoritma tersebut adalah:
-
-    - K-Nearest Neighbor Algorithm yang menggunakan kesamaan fitur untuk memprediksi nilai dari setiap data yang baru.
-    - Random Forest yang menggunakan rata-rata prediksi seluruh pohon dalam model ensemble untuk dijadikan prediksi akhirnya. 
-    - Boosting Algorithm yang bertujuan untuk meningkatkan performa atau akurasi prediksi dengan menggabungkan beberapa model sederhana dan dianggap lemah sehingga membentuk suatu model yang kuat.
 
 
 ## Data Understanding
 
-Dataset yang digunakan pada proyek ini adalah dataset *House Rent Prediction Dataset* yang didapat dari situs [Kaggle](https://www.kaggle.com/datasets/iamsouravbanerjee/house-rent-prediction-dataset). Dalam Dataset ini memiliki 4.746 rumah/apartemen/rumah susun yang tersedia untuk disewakan dengan berbagai karakteristik yang berbeda. Karakteristik yang dimaksud disini adalah fitur non-numerik seperti Floor, Area Type, Area Locality, City, Furnishing Status, Tenant Preferred, dan  Point of Contact, serta fitur numerik seperti BHK, Rent, Size, dan Bathroom. Kesebelas fitur ini merupakan fitur yang akan digunakan dalam menemukan pola dan data.
+Dataset yang digunakan pada proyek ini adalah dataset *Book Recommendation Dataset* yang didapat dari situs [Kaggle](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset). Pada dataset ini terdapat 3 berkas beformat csv yaitu: Books, Ratings, dan Users. Dari ketiga berkas tersebut akan dibuat variabel untuk memuat berbagai fitur didalamnya.
 
 
-## Exploratory Data Analysis - Deskripsi Variabel
+## Exploratory Data Analysis - Univariate Analysis
 
-Berdasarkan informasi dari [Kaggle](https://www.kaggle.com/datasets/iamsouravbanerjee/house-rent-prediction-dataset), variabel-variabel pada House Rent Prediction Dataset adalah sebagai berikut:
+Variabel-variabel pada *Book Recommendation Dataset* adalah sebagai berikut:
+- Books: Merupakan informasi seputar buku yang didalamnya terdapat fitur: judul buku, penulis buku, tahun publikasi buku, dan penerbit.
+- Ratings: Berisi informasi penilaian terhadap buku. Penilaian (Book-Rating) bersifat eksplisit, dinyatakan dalam skala 1-10 (semakin tinggi nilai menunjukkan apresiasi yang lebih tinggi), atau implisit, yang dinyatakan dengan 0.
+- Users: Berisi informasi seputar data pengguna yang didalamnya terdapat fitur: ID user, lokasi, dan umur.
+Variabel yang akan di eksplorasi pada proyek ini adalah variabel Books dan Ratings. Sedangkan, variabel Users hanya digunakan untuk melihat bagaimana profile penguna.
 
-- BHK: Jumlah kamar tidur (bedrooms), aula (hall), dapur (kitchen).
-- Rent: Harga sewa rumah/apartemen/rumah susun.
-- Size: Ukuran (ft<sup>2</sup>) rumah/apartemen/rumah susun.
-- Floor: Letak lantai dan jumlah total lantai rumah/apartemen/rumah susun (contoh: lantai ground dari 2, 3 dari 5, dll.)
-- Area Type: Ukuran rumah/apartemen/rumah susun dengan kategori Super Area, Area Karpet atau Area Bangunan.
-- Area Locality: Letak lokasi rumah/apartemen/rumah susun.
-- City: Kota letak rumah/apartemen/rumah susun berada.
-- Furnishing Status: Status perabotan rumah/apartemen/rumah susun dengan kategori Furnished (berperabot), Semi-Furnished (sedikit perabotan), dan Unfurnished (tidak memiliki perabotan).
-- Tenant Preferred: Jenis penyewa yang diutamakan oleh pemilik.
-- Bathroom: Jumlah kamar mandi.
-- Point of Contact: Siapa yang harus dihubungi untuk informasi lebih lanjut tentang rumah/apartemen/rumah susun.
 
 
 Tabel 1. Mengecek informasi pada dataset:
