@@ -27,7 +27,7 @@ Solusi yang dibuat yaitu dengan menggunakan 2 algoritma sistem rekomendasi pada 
     
 - Collaborative Filtering
 
-  *Collaborative Filtering* bergantung pada pendapat komunitas pengguna. Algoritma ini tidak memerlukan atribut untuk setiap itemnya seperti pada sistem berbasis konten (*Content Based Filtering *). Algoritma ini digunakan untuk merekomendasikan buku kepada pengguna berdasarkan nilai rating buku tertinggi.
+  *Collaborative Filtering* bergantung pada pendapat komunitas pengguna. Algoritma ini tidak memerlukan atribut untuk setiap itemnya seperti pada sistem berbasis konten (*Content Based Filtering*). Algoritma ini digunakan untuk merekomendasikan buku kepada pengguna berdasarkan nilai rating buku tertinggi.
 
 
 ## Data Understanding
