@@ -209,7 +209,7 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan *Collabora
 
 3. **Proses Training**
    
-   Pada tahap ini, model menghitung skor kecocokan antara pengguna dan buku dengan teknik embedding menggunakan class RecommenderNet. Pertama, melakukan proses embedding terhadap data user dan buku. Selanjutnya, melakukan operasi perkalian dot product antara embedding user dan buku. Selain itu, juga menambahkan bias untuk setiap user dan buku. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan proses compile terhadap model. Model ini menggunakan Binary Crossentropy untuk menghitung loss function, Adam (*Adaptive Moment Estimation*) sebagai optimizer, dan Root Mean Squared Error (RMSE) sebagai metrics evaluation.
+   Pada tahap ini, model menghitung skor kecocokan antara pengguna dan buku dengan teknik embedding menggunakan class RecommenderNet. Pertama, melakukan proses embedding terhadap data user dan buku. Selanjutnya, melakukan operasi perkalian dot product antara embedding user dan buku. Selain itu, juga menambahkan bias untuk setiap user dan buku. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan proses compile terhadap model. Model ini menggunakan Binary Crossentropy untuk menghitung loss function, Adam (*Adaptive Moment Estimation*) sebagai optimizer dengan parameter learning rate sebesar 0.001, dan Root Mean Squared Error (RMSE) sebagai metrics evaluation.
 
 
 ## Evaluasi Collaborative Filtering
