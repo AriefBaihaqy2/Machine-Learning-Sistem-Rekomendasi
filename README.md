@@ -56,16 +56,16 @@ Variabel-variabel pada *Book Recommendation Dataset* adalah sebagai berikut:
    | Image-URL-M         | 271360 non-null | object |
    | Image-URL-L         | 271357 non-null | object |
 
-   Berdasarkan Tabel 1, dapat diketahui bahwa variabel Books memiliki kurang lebih 271359 entri. Terdapat 8 kolom disini, yaitu:
+   Berdasarkan Tabel 1, dapat diketahui bahwa variabel Books memiliki kurang lebih 271.359 entri. Terdapat 8 kolom disini, yaitu:
 
-   - ISBN (International Standard Book Number) adalah kode pengidentifikasian buku.
+   - ISBN (*International Standard Book Number*) adalah kode pengidentifikasian buku.
    - Book-Title merupakan judul buku.
    - Book-Author merupakan nama dari penulis buku.
    - Year-Of-Publication merupakan tahun publikasi buku.
    - Publisher merupakan pihak yang menerbitkan buku.
-   - Image-URL-S merupakan tautan dalam skala kecil (small).
-   - Image-URL-M merupakan tautan dalam skala sedang (medium).
-   - Image-URL-L merupakan tautan dalam skala besar (large).
+   - Image-URL-S merupakan tautan dalam skala kecil (*small*).
+   - Image-URL-M merupakan tautan dalam skala sedang (*medium*).
+   - Image-URL-L merupakan tautan dalam skala besar (*large*).
 
 2. **Variabel Ratings**
 
@@ -79,7 +79,7 @@ Variabel-variabel pada *Book Recommendation Dataset* adalah sebagai berikut:
    | ISBN        | 1149780 non-null | object |
    | Book-Rating | 1149780 non-null | int64  |
 
-   Berdasarkan Tabel 2, dapat diketahui bahwa variabel Ratings memiliki banyak entri yaitu 1.149.780 entri. Trrdapat 3 kolom disini, yaitu:
+   Berdasarkan Tabel 2, dapat diketahui bahwa variabel Ratings memiliki banyak entri yaitu 1.149.780 entri. Terdapat 3 kolom disini, yaitu:
 
    - User-ID merupakan identitas pengguna.
    - ISBN merupakan kode pengidentifikasian buku.
@@ -91,7 +91,7 @@ Variabel-variabel pada *Book Recommendation Dataset* adalah sebagai berikut:
    |-------|----------------|----------------|
    | count | 1149780.000000 | 1149780.000000 |
    | mean  | 140386.395126	 | 2.866950       |
-   | std   | 80562.277719	  |  3.854184      |
+   | std   | 80562.277719	  | 3.854184       |
    | min   | 2.000000	      | 0.000000       |
    | 25%   | 70345.000000   | 0.000000       |
    | 50%   | 141010.000000	 | 0.000000       |
@@ -116,14 +116,15 @@ Variabel yang akan di eksplorasi pada proyek ini adalah variabel Books dan Ratin
 
 
 ## Data Preprocessing
-Dapat dilihat sebelumnya pada bagian Exploratory Data Analysis bahwa sangat banyak entri pada masing-masing variabel, contohnya pada Variabel Ratings memiliki hingga 1.149.780 entri, dengan banyaknya entri akan memakan banyak penggunaan backend RAM gratis pada google colab, sehingga entri pada masing-masing variabel akan dikurangi menjadi 50.000 entri saja. Kemudian melakukan proses penggabungan data berkas berdasarkan fitur-fitur yang memiliki keterkaitan. Langkah selanjutnya adalah menghapus fitur pada variabel Books yaitu: Image-URL-S, Image-URL-M, dan Image-URL-L. Karena ketiga fitur tersebut tidak akan digunakan dan tidak memiliki pengaruh terhadap perekomendasian buku.
+
+Dapat dilihat sebelumnya pada bagian *Exploratory Data Analysis* bahwa sangat banyak entri pada masing-masing variabel, contohnya pada Variabel Ratings memiliki hingga 1.149.780 entri, dengan banyaknya entri akan memakan banyak penggunaan backend RAM gratis pada *platform* google colab, sehingga entri pada masing-masing variabel akan dikurangi menjadi 50.000 entri saja. Kemudian melakukan proses penggabungan data berkas berdasarkan fitur-fitur yang memiliki keterkaitan. Langkah selanjutnya adalah menghapus fitur pada variabel Books yaitu: Image-URL-S, Image-URL-M, dan Image-URL-L. Karena ketiga fitur tersebut tidak akan digunakan dan tidak memiliki pengaruh terhadap perekomendasian buku.
 
 
 ## Data Preparation Model Content Based Filtering
 
-1. Mengatasi Missing Value
+1. Mengatasi *Missing Value*
 
-   Tabel 5. Mengecek missing value setelah proses penggabungan
+   Tabel 5. Mengecek *missing value* setelah proses penggabungan
 
    | Column              |      |
    |---------------------|------|
@@ -135,7 +136,7 @@ Dapat dilihat sebelumnya pada bagian Exploratory Data Analysis bahwa sangat bany
    | Year-Of-Publication | 5287 |
    | Publisher           | 5287 |
 
-   Berdasarkan Tabel 5, dapat diketahui terdapat 5287 dari 20963 missing value pada kolom Book-Title (judul buku), Book-Author (penulis), Year-Of-Publication (tahun publikasi buku), dan Publisher (penerbit). Maka data yang memiliki missing value ini akan dihapus agar pembuatan model akan menjadi lebih baik dan dapat meningkatkan performa model.
+   Berdasarkan Tabel 5, dapat diketahui terdapat 5.287 *missing value* pada kolom Book-Title (judul buku), Book-Author (penulis), Year-Of-Publication (tahun publikasi buku), dan Publisher (penerbit). Maka data yang memiliki *missing value* ini akan dihapus agar pembuatan model akan menjadi lebih baik dan dapat meningkatkan performa model.
 
 2. Menghapus data duplikat
    Menghapus data duplikat perlu dilakukan karena hanya akan digunakan data unik untuk dimasukkan ke dalam proses pemodelan. Oleh karena itu, perlu menghapus data yang duplikat. Dalam hal ini, kolom ISBN yang duplikat akan dibuang.
@@ -145,7 +146,7 @@ Dapat dilihat sebelumnya pada bagian Exploratory Data Analysis bahwa sangat bany
 
 ## Model Development dengan Content Based Filtering
 
-Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Based Filtering yaitu:
+Adapun langkah-langkah yang digunakan dalam pengembangan model dengan *Content Based Filtering* yaitu:
 
 1. **TF-IDF Vectorizer**
 
@@ -153,56 +154,56 @@ Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Content Ba
    
 2. **Cosine Similarity**
 
-   Pada tahap ini akan menghitung derajat kesamaan (similarity degree) antar judul buku dengan teknik cosine similarity, selanjutnya melihat matriks kesamaan setiap judul buku dengan menampilkan judul buku dalam 10 sampel kolom (axis=1) dan 10 sampel baris (axis=0) yang dapat dilihat pada Gambar 1.
+   Pada tahap ini akan menghitung derajat kesamaan (*similarity degree*) antar judul buku dengan teknik Cosine Similarity, selanjutnya melihat matriks kesamaan setiap judul buku dengan menampilkan judul buku dalam 10 sampel kolom (axis=1) dan 10 sampel baris (axis=0) yang dapat dilihat pada Gambar 1.
    
    ![image](https://user-images.githubusercontent.com/110958395/194380685-ffb489f4-d9d0-40b4-86dd-1cff1e28f16f.png)
    
    Gambar 1. Matriks Cosine Similarity
    
-   Berdasarkan Gambar 1, dapat diketahui angka yang memiliki nilai lebih dari 0 mengindikasikan kemiripan judul buku. Dalam hal ini judul buku pada kolom X (horizontal) memiliki kemiripan dengan judul buku pada baris Y (vertikal). Sebagai contoh, buku dengan judul Resurrection Men (Inspector Rebus S.) teridentifikasi mirip dengan buku berjudul Wednesday's Child: An Inspector Banks Mystery.
+   Berdasarkan Gambar 1, dapat diketahui angka yang memiliki nilai lebih dari 0 mengindikasikan kemiripan judul buku. Dalam hal ini judul buku pada kolom X (horizontal) memiliki kemiripan dengan judul buku pada baris Y (vertikal). Sebagai contoh, buku dengan judul *Resurrection Men (Inspector Rebus S.)* teridentifikasi mirip dengan buku berjudul *Wednesday's Child: An Inspector Banks Mystery*.
 
 3. **Mendapatkan Rekomendasi**
    
-   Pada tahap ini akan menghasilkan sejumlah buku yang akan direkomendasikan kepada pengguna dengan keluaran sistem rekomendasi buku berupa top-N recommendaation, oleh karena itu sistem akan memberikan sejumlah rekomendasi buku pada pengguna. Sebagai contoh, pengguna X pernah membaca buku yang berjudul Resurrection Men (Inspector Rebus S.). Kemudian, saat pengguna tersebut berencana untuk membaca buku lain, sistem akan merekomendasikan buku lain yang memiliki kemiripan dengan buku yang sebelumnya pernah dibaca oleh pengguna. Rekomendasi kedua buku ini berdasarkan kesamaan yang dihitung dengan cosine similarity pada tahap sebelumnya.
+   Pada tahap ini akan menghasilkan sejumlah buku yang akan direkomendasikan kepada pengguna dengan keluaran sistem rekomendasi buku berupa Top-N Recommendation, oleh karena itu sistem akan memberikan sejumlah rekomendasi buku pada pengguna. Sebagai contoh, pengguna X pernah membaca buku yang berjudul *Resurrection Men (Inspector Rebus S.)*. Kemudian, saat pengguna tersebut berencana untuk membaca buku lain, sistem akan merekomendasikan buku lain yang memiliki kemiripan dengan buku yang sebelumnya pernah dibaca oleh pengguna. Rekomendasi kedua buku ini berdasarkan kesamaan yang dihitung dengan Cosine Similarity pada tahap sebelumnya.
+   
    
 ## Evaluasi Content Based Filtering
 
-Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggunakan Top-N Recommendation untuk mengambil k dengan nilai similarity terbesar pada index matrix yang diberikan. Langkah pertama yaitu mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan yang kemudian dataframe akan diubah menjadi numpy, dengan menggunakan argpartition di ambil sejumlah nilai k tertinggi dari similarity, dalam kasus ini digunakan dataframe cosine similarity, Kemudian, mengambil data dari bobot (tingkat kesamaan) tertinggi ke terendah, kemudian menghapus judul buku agar nantinya output data judul buku yang dicari tidak muncul pada daftar rekomendasi buku.
+Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggunakan Top-N Recommendation untuk mengambil k dengan nilai *similarity* terbesar pada index matriks yang diberikan. Langkah pertama yaitu mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan yang kemudian dataframe akan diubah menjadi numpy, dengan menggunakan argpartition di ambil sejumlah nilai k tertinggi dari *similarity*, dalam kasus ini digunakan dataframe Cosine Similarity, Kemudian, mengambil data dari bobot (tingkat kesamaan) tertinggi ke terendah, kemudian menghapus judul buku agar nantinya output data judul buku yang dicari tidak muncul pada daftar rekomendasi buku.
 
-Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan buku yang berjudul Waking Up Screaming: Haunting Tales of Terror.
+Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*.
 
 ![Screenshot 2022-10-07 003703](https://user-images.githubusercontent.com/110958395/194398408-11b7599c-ab18-418a-abfb-ef559e0a49a7.jpg)
 
 Gambar 2. Hasil Rekomendasi Buku
 
-Berdasarkan Gambar 2, dapat diketahui bahwa dari 10 buku yang direkomendasikan memiliki kemiripan dengan buku yang berjudul Waking Up Screaming: Haunting Tales of Terror. Dalam hal ini juga dapat diketahui dari 10 buku yang direkomendasikan, terdapat 8 buku yang relevan, jadi dapat disimpulkan precision pada sistem ini sebesar 80% yang mengacu pada rumus berikut:
+Berdasarkan Gambar 2, dapat diketahui bahwa dari 10 buku yang direkomendasikan memiliki kemiripan dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*. Dalam hal ini juga dapat diketahui dari 10 buku yang direkomendasikan, terdapat 8 buku yang relevan, jadi dapat disimpulkan precision pada sistem ini sebesar 80% yang mengacu pada rumus berikut:
 
 ![image](https://user-images.githubusercontent.com/110958395/194400379-df1a09ee-72d7-461b-a1aa-99440a3f1fd0.png)
 
 Gambar 3. Rumus Recommender System Precision
 
 
-
 ## Model Development dengan Collaborative Filtering
 
-Adapun langkah-langkah yang digunakan dalam pengembangan model dengan Collaborative Filtering yaitu:
+Adapun langkah-langkah yang digunakan dalam pengembangan model dengan *Collaborative Filtering* yaitu:
 
 1. **Data Preparation Model Collaborative Filtering**
    
-   Tahap pertama dalam melakukan persiapan sebelum melakukan pemodelan adalah melakukan persiapan data Ratings untuk menyandikan (encode) fitur User-ID dan ISBN kedalam indeks integer, kemudian memetakan User-ID dan ISBN ke dataframe yang berkaitan, dan terakhir mengecek beberapa hal dalam data seperti jumlah user, jumlah buku, dan mengubah nilai rating menjadi float.
+   Tahap pertama dalam melakukan persiapan sebelum melakukan pemodelan adalah melakukan persiapan data Ratings untuk menyandikan (*encode*) fitur User-ID dan ISBN kedalam indeks integer, kemudian memetakan User-ID dan ISBN ke dataframe yang berkaitan, dan terakhir mengecek beberapa hal dalam data seperti jumlah user, jumlah buku, dan mengubah nilai rating menjadi float.
 
 2. **Membagi Data untuk Training dan Validasi**
    
-   Sebelum melakukan pelatihan model tahapan yang harus diselesaikan yaitu mengacak data Ratings terlebih dahulu agar pendistribusiannya menjadi random, kemudian dilanjutkan dengan memetakan (mapping) data user dan buku menjadi satu value terlebih dahulu, lalu membuat rating dalam skala 0 sampai 1 agar mudah dalam melakukan proses training, agar nantinya data akan siap untuk dimasukkan ke dalam model, dan terakhir melakukan split data untuk membagi data menjadi 80% data train dan 20% data validasi.
+   Sebelum melakukan pelatihan model tahapan yang harus diselesaikan yaitu mengacak data Ratings terlebih dahulu agar pendistribusiannya menjadi random, kemudian dilanjutkan dengan memetakan (mapping) data user dan buku menjadi satu value terlebih dahulu, lalu membuat rating dalam skala 0 sampai 1 agar mudah dalam melakukan proses training, agar nantinya data akan siap untuk dimasukkan ke dalam model, dan terakhir melakukan split data untuk membagi data menjadi 80% data latih dan 20% data validasi.
 
 3. **Proses Training**
    
-   Pada tahap ini, model menghitung skor kecocokan antara pengguna dan buku dengan teknik embedding menggunakan class RecommenderNet. Pertama, melakukan proses embedding terhadap data user dan buku. Selanjutnya, melakukan operasi perkalian dot product antara embedding user dan buku. Selain itu, juga menambahkan bias untuk setiap user dan buku. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan proses compile terhadap model. Model ini menggunakan Binary Crossentropy untuk menghitung loss function, Adam (Adaptive Moment Estimation) sebagai optimizer, dan root mean squared error (RMSE) sebagai metrics evaluation.
+   Pada tahap ini, model menghitung skor kecocokan antara pengguna dan buku dengan teknik embedding menggunakan class RecommenderNet. Pertama, melakukan proses embedding terhadap data user dan buku. Selanjutnya, melakukan operasi perkalian dot product antara embedding user dan buku. Selain itu, juga menambahkan bias untuk setiap user dan buku. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan proses compile terhadap model. Model ini menggunakan Binary Crossentropy untuk menghitung loss function, Adam (*Adaptive Moment Estimation*) sebagai optimizer, dan Root Mean Squared Error (RMSE) sebagai metrics evaluation.
 
 
 ## Evaluasi Collaborative Filtering
 
-Adapun metrik evaluasi yang digunakan pada model Collaborative Filtering adalah Root Mean Squared Error (RMSE). Metode pengukuran ini berfungsi sebagai perkiraan nilai yang diamati dengan mengukur perbedaan nilai prediksi model. Root Mean Squared Error adalah hasil dari akar kuadrat dari Mean Squared Error. Keakuratan metode estimasi kesalahan pengukuran diwakili oleh nilai RMSE yang kecil. Semakin kecil (mendekati 0) nilai RMSE maka hasil prediksi akan semakin akurat. Rumus metrik RMSE ditunjukkan pada gambar berikut:
+Adapun metrik evaluasi yang digunakan pada model *Collaborative Filtering* adalah Root Mean Squared Error (RMSE). Metode pengukuran ini berfungsi sebagai perkiraan nilai yang diamati dengan mengukur perbedaan nilai prediksi model. Root Mean Squared Error adalah hasil dari akar kuadrat dari Mean Squared Error. Keakuratan metode estimasi kesalahan pengukuran diwakili oleh nilai RMSE yang kecil. Semakin kecil (mendekati 0) nilai RMSE maka hasil prediksi akan semakin akurat. Rumus metrik RMSE ditunjukkan pada gambar berikut:
 
 ![image](https://user-images.githubusercontent.com/110958395/194405920-410f2583-fadc-41cb-9429-f20bf2306a78.png)
 
@@ -229,7 +230,7 @@ Berdasarkan Gambar 5, dapat diketahui proses training model cukup smooth pada ep
 
 ## Mendapatkan Rekomendasi Buku
 
-Untuk mendapatkan rekomendasi buku, pertama mengambil sampel user secara acak dan mendefinisikan variabel books_unreaded yang merupakan daftar buku yang belum pernah dibaca oleh pengguna, books_unreaded inilah yang akan menjadi buku yang direkomendasikan kepada pengguna. Sebelumnya, pengguna telah memberi rating pada beberapa buku yang telah mereka baca. Rating ini digunakan untuk membuat rekomendasi buku yang mungkin cocok untuk pengguna. Buku yang akan direkomendasikan tentulah buku yang belum pernah dibaca oleh pengguna.
+Untuk mendapatkan rekomendasi buku, pertama mengambil sampel user secara acak dan mendefinisikan variabel unreaded_Books yang merupakan daftar buku yang belum pernah dibaca oleh pengguna, unreaded_Books inilah yang akan menjadi buku yang direkomendasikan kepada pengguna. Sebelumnya, pengguna telah memberi rating pada beberapa buku yang telah mereka baca. Rating ini digunakan untuk membuat rekomendasi buku yang mungkin cocok untuk pengguna. Buku yang akan direkomendasikan tentulah buku yang belum pernah dibaca oleh pengguna.
 
 ![image](https://user-images.githubusercontent.com/110958395/194392908-f688e1c7-95a5-427c-a208-5a5a90e8c0b2.png)
 
