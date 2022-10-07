@@ -143,35 +143,31 @@ Dapat dilihat sebelumnya pada bagian *Exploratory Data Analysis* bahwa sangat ba
     
 3. Langkah selanjutnya adalah melakukan konversi data series menjadi list untuk kemudian membuat dictionary untuk menentukan pasangan key-value pada data yang telah dikonversi menjadi list sebelumnya.
 
+## Modelling and Result
 
-## Model Development dengan Content Based Filtering
+### A. Model Development dengan Content Based Filtering
 
-Adapun langkah-langkah yang digunakan dalam pengembangan model dengan *Content Based Filtering* yaitu:
+   Adapun langkah-langkah yang digunakan dalam pengembangan model dengan *Content Based Filtering* yaitu:
 
-1. **TF-IDF Vectorizer**
+   1. **TF-IDF Vectorizer**
 
-   Pada tahap ini, membangun sistem rekomendasi sederhana berdasarkan judul buku yang tersedia menggunakan TF-IDF Vectorizer, selanjutnya melakukan fit pada judul buku dan ditransformasikan kedalam bentuk matriks yang kemudian menghasilkan vektor tf-idf dalam bentuk matriks.
+      Pada tahap ini, membangun sistem rekomendasi sederhana berdasarkan judul buku yang tersedia menggunakan TF-IDF Vectorizer, selanjutnya melakukan fit pada judul buku dan ditransformasikan kedalam bentuk matriks yang kemudian menghasilkan vektor tf-idf dalam bentuk matriks.
    
-2. **Cosine Similarity**
+   2. **Cosine Similarity**
 
-   Pada tahap ini akan menghitung derajat kesamaan (*similarity degree*) antar judul buku dengan teknik Cosine Similarity, selanjutnya melihat matriks kesamaan setiap judul buku dengan menampilkan judul buku dalam 10 sampel kolom (axis=1) dan 10 sampel baris (axis=0) yang dapat dilihat pada Gambar 1.
+      Pada tahap ini akan menghitung derajat kesamaan (*similarity degree*) antar judul buku dengan teknik Cosine Similarity, selanjutnya melihat matriks kesamaan setiap judul buku dengan menampilkan judul buku dalam 10 sampel kolom (axis=1) dan 10 sampel baris (axis=0) yang dapat dilihat pada Gambar 1.
    
-   ![image](https://user-images.githubusercontent.com/110958395/194380685-ffb489f4-d9d0-40b4-86dd-1cff1e28f16f.png)
+      ![image](https://user-images.githubusercontent.com/110958395/194380685-ffb489f4-d9d0-40b4-86dd-1cff1e28f16f.png)
    
-   Gambar 1. Matriks Cosine Similarity
+      Gambar 1. Matriks Cosine Similarity
    
-   Berdasarkan Gambar 1, dapat diketahui angka yang memiliki nilai lebih dari 0 mengindikasikan kemiripan judul buku. Dalam hal ini judul buku pada kolom X (horizontal) memiliki kemiripan dengan judul buku pada baris Y (vertikal). Sebagai contoh, buku dengan judul *Resurrection Men (Inspector Rebus S.)* teridentifikasi mirip dengan buku berjudul *Wednesday's Child: An Inspector Banks Mystery*.
+      Berdasarkan Gambar 1, dapat diketahui angka yang memiliki nilai lebih dari 0 mengindikasikan kemiripan judul buku. Dalam hal ini judul buku pada kolom X (horizontal) memiliki kemiripan dengan judul buku pada baris Y (vertikal). Sebagai contoh, buku dengan judul *Resurrection Men (Inspector Rebus S.)* teridentifikasi mirip dengan buku berjudul *Wednesday's Child: An Inspector Banks Mystery*.
 
-3. **Mendapatkan Rekomendasi**
+   3. **Mendapatkan Rekomendasi**
    
-   Pada tahap ini akan menghasilkan sejumlah buku yang akan direkomendasikan kepada pengguna dengan keluaran sistem rekomendasi buku berupa Top-N Recommendation, oleh karena itu sistem akan memberikan sejumlah rekomendasi buku pada pengguna. Sebagai contoh, pengguna X pernah membaca buku yang berjudul *Resurrection Men (Inspector Rebus S.)*. Kemudian, saat pengguna tersebut berencana untuk membaca buku lain, sistem akan merekomendasikan buku lain yang memiliki kemiripan dengan buku yang sebelumnya pernah dibaca oleh pengguna. Rekomendasi kedua buku ini berdasarkan kesamaan yang dihitung dengan Cosine Similarity pada tahap sebelumnya.
-   
-   
-## Evaluasi Content Based Filtering
-
-Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggunakan Top-N Recommendation untuk mengambil k dengan nilai *similarity* terbesar pada index matriks yang diberikan. Langkah pertama yaitu mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan yang kemudian dataframe akan diubah menjadi numpy, dengan menggunakan argpartition di ambil sejumlah nilai k tertinggi dari *similarity*, dalam kasus ini digunakan dataframe Cosine Similarity, Kemudian, mengambil data dari bobot (tingkat kesamaan) tertinggi ke terendah, kemudian menghapus judul buku agar nantinya output data judul buku yang dicari tidak muncul pada daftar rekomendasi buku.
-
-Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*.
+      Pada tahap ini akan menghasilkan sejumlah buku yang akan direkomendasikan kepada pengguna dengan keluaran sistem rekomendasi buku berupa Top-N Recommendation, oleh karena itu sistem akan memberikan sejumlah rekomendasi buku pada pengguna. Sebagai contoh, pengguna X pernah membaca buku yang berjudul *Resurrection Men (Inspector Rebus S.)*. Kemudian, saat pengguna tersebut berencana untuk membaca buku lain, sistem akan merekomendasikan buku lain yang memiliki kemiripan dengan buku yang sebelumnya pernah dibaca oleh pengguna. Rekomendasi kedua buku ini berdasarkan kesamaan yang dihitung dengan Cosine Similarity pada tahap sebelumnya.
+      
+Setelah dilakukan tahapan-tahapan tersebut, dilakukan uji coba dengan menghasilkan Top-N Recommendation pada model *Content Based Filtering*. Pada kasus kali ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*.
 
 | No.| Books Title                                 | Books Author     | Year | Publisher             |
 |----|---------------------------------------------|------------------|------|-----------------------|
@@ -186,33 +182,50 @@ Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan bu
 | 9  | Great Tales of Terror (A Watermill Classic) |	Edgar Allan Poe  |	1993 |	Troll  Communications |
 | 10 | Tales Of Passion Tales Of Woe	              | Sandra Gulland   |	1999 |	Touchstone            |
 
-Tabel 6. Hasil Rekomendasi Buku
+Tabel 6. Hasil Rekomendasi Buku *Content Based Filtering*
 
-Berdasarkan Tabel 6, dapat diketahui bahwa dari 10 buku yang direkomendasikan memiliki kemiripan dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*. Dalam hal ini juga dapat diketahui dari 10 buku yang direkomendasikan, terdapat 8 buku yang relevan, jadi dapat disimpulkan precision pada sistem ini sebesar 80% yang mengacu pada rumus berikut:
+Berdasarkan Tabel 6, dapat diketahui bahwa dari 10 buku yang direkomendasikan memiliki kemiripan dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*.
+        
+        
+### B. Model Development dengan Collaborative Filtering
+
+   Adapun langkah-langkah yang digunakan dalam pengembangan model dengan *Collaborative Filtering* yaitu:
+
+   1. **Data Preparation Model Collaborative Filtering**
+   
+      Tahap pertama dalam melakukan persiapan sebelum melakukan pemodelan adalah melakukan persiapan data Ratings untuk menyandikan (*encode*) fitur User-ID dan ISBN kedalam indeks integer, kemudian memetakan User-ID dan ISBN ke dataframe yang berkaitan, dan terakhir mengecek beberapa hal dalam data seperti jumlah user, jumlah buku, dan mengubah nilai rating menjadi float.
+
+   2. **Membagi Data untuk Training dan Validasi**
+   
+      Sebelum melakukan pelatihan model tahapan yang harus diselesaikan yaitu mengacak data Ratings terlebih dahulu agar pendistribusiannya menjadi random, kemudian dilanjutkan dengan memetakan (mapping) data user dan buku menjadi satu value terlebih dahulu, lalu membuat rating dalam skala 0 sampai 1 agar mudah dalam melakukan proses training, agar nantinya data akan siap untuk dimasukkan ke dalam model, dan terakhir melakukan split data untuk membagi data menjadi 80% data latih dan 20% data validasi.
+
+   3. **Proses Training**
+   
+      Pada tahap ini, model menghitung skor kecocokan antara pengguna dan buku dengan teknik embedding menggunakan class RecommenderNet. Pertama, melakukan proses embedding terhadap data user dan buku. Selanjutnya, melakukan operasi perkalian dot product antara embedding user dan buku. Selain itu, juga menambahkan bias untuk setiap user dan buku. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan proses compile terhadap model. Model ini menggunakan Binary Crossentropy untuk menghitung loss function, Adam (*Adaptive Moment Estimation*) sebagai optimizer dengan parameter learning rate sebesar 0.001, dan Root Mean Squared Error (RMSE) sebagai metrics evaluation.
+      
+Setelah dilakukan tahapan-tahapan tersebut, dilakukan uji coba dengan menghasilkan Top-N Recommendation buku pada model *Collaborative Filtering*. Untuk mendapatkan rekomendasi buku, pertama mengambil sampel user secara acak dan mendefinisikan variabel unreaded_Books yang merupakan daftar buku yang belum pernah dibaca oleh pengguna, unreaded_Books inilah yang akan menjadi buku yang direkomendasikan kepada pengguna. Sebelumnya, pengguna telah memberi rating pada beberapa buku yang telah mereka baca. Rating ini digunakan untuk membuat rekomendasi buku yang mungkin cocok untuk pengguna. Buku yang akan direkomendasikan tentulah buku yang belum pernah dibaca oleh pengguna. Hasil rekomendasi buku dapat dilihat pada Gambar 6.
+
+![image](https://user-images.githubusercontent.com/110958395/194392908-f688e1c7-95a5-427c-a208-5a5a90e8c0b2.png)
+
+Gambar 6.Hasil Rekomendasi Buku *Collaborative Filtering*
+
+Berdasarkan Gambar 6 merupakan rekomendasi untuk user dengan id 8872. Dari output tersebut, dapat melakukan perbandingan antara Books with high ratings from user dan Top 10 Books recommendation untuk user.
+   
+
+## Evaluasi
+
+### A. Evaluasi Content Based Filtering
+
+Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggunakan Top-N Recommendation untuk mengambil k dengan nilai *similarity* terbesar pada index matriks yang diberikan. Langkah pertama yaitu mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan yang kemudian dataframe akan diubah menjadi numpy, dengan menggunakan argpartition di ambil sejumlah nilai k tertinggi dari *similarity*, dalam kasus ini digunakan dataframe Cosine Similarity. Kemudian, mengambil data dari bobot (tingkat kesamaan) tertinggi ke terendah, kemudian menghapus judul buku agar nantinya output data judul buku yang dicari tidak muncul pada daftar rekomendasi buku.
+
+Berdasarkan hasil rekomendasi buku dengan model *Content Based Filtering* yang dapat dilihat pada Tabel 6, dapat diketahui dari 10 buku yang direkomendasikan, terdapat 8 buku yang relevan, jadi dapat disimpulkan precision pada sistem ini sebesar 80% yang mengacu pada persamaan berikut:
 
 ![image](https://user-images.githubusercontent.com/110958395/194400379-df1a09ee-72d7-461b-a1aa-99440a3f1fd0.png)
 
-Gambar 3. Rumus Recommender System Precision
+Gambar 3. Persamaan Recommender System Precision
 
 
-## Model Development dengan Collaborative Filtering
-
-Adapun langkah-langkah yang digunakan dalam pengembangan model dengan *Collaborative Filtering* yaitu:
-
-1. **Data Preparation Model Collaborative Filtering**
-   
-   Tahap pertama dalam melakukan persiapan sebelum melakukan pemodelan adalah melakukan persiapan data Ratings untuk menyandikan (*encode*) fitur User-ID dan ISBN kedalam indeks integer, kemudian memetakan User-ID dan ISBN ke dataframe yang berkaitan, dan terakhir mengecek beberapa hal dalam data seperti jumlah user, jumlah buku, dan mengubah nilai rating menjadi float.
-
-2. **Membagi Data untuk Training dan Validasi**
-   
-   Sebelum melakukan pelatihan model tahapan yang harus diselesaikan yaitu mengacak data Ratings terlebih dahulu agar pendistribusiannya menjadi random, kemudian dilanjutkan dengan memetakan (mapping) data user dan buku menjadi satu value terlebih dahulu, lalu membuat rating dalam skala 0 sampai 1 agar mudah dalam melakukan proses training, agar nantinya data akan siap untuk dimasukkan ke dalam model, dan terakhir melakukan split data untuk membagi data menjadi 80% data latih dan 20% data validasi.
-
-3. **Proses Training**
-   
-   Pada tahap ini, model menghitung skor kecocokan antara pengguna dan buku dengan teknik embedding menggunakan class RecommenderNet. Pertama, melakukan proses embedding terhadap data user dan buku. Selanjutnya, melakukan operasi perkalian dot product antara embedding user dan buku. Selain itu, juga menambahkan bias untuk setiap user dan buku. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan proses compile terhadap model. Model ini menggunakan Binary Crossentropy untuk menghitung loss function, Adam (*Adaptive Moment Estimation*) sebagai optimizer dengan parameter learning rate sebesar 0.001, dan Root Mean Squared Error (RMSE) sebagai metrics evaluation.
-
-
-## Evaluasi Collaborative Filtering
+### B. Evaluasi Collaborative Filtering
 
 Adapun metrik evaluasi yang digunakan pada model *Collaborative Filtering* adalah Root Mean Squared Error (RMSE). Metode pengukuran ini berfungsi sebagai perkiraan nilai yang diamati dengan mengukur perbedaan nilai prediksi model. Root Mean Squared Error adalah hasil dari akar kuadrat dari Mean Squared Error. Keakuratan metode estimasi kesalahan pengukuran diwakili oleh nilai RMSE yang kecil. Semakin kecil (mendekati 0) nilai RMSE maka hasil prediksi akan semakin akurat. Rumus metrik RMSE ditunjukkan pada gambar berikut:
 
@@ -239,17 +252,6 @@ Berdasarkan Gambar 4, keterangan yang ada pada persamaan RMSE yaitu:
   Berdasarkan Gambar 5, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi.
 
 
-## Mendapatkan Rekomendasi Buku
-
-Untuk mendapatkan rekomendasi buku, pertama mengambil sampel user secara acak dan mendefinisikan variabel unreaded_Books yang merupakan daftar buku yang belum pernah dibaca oleh pengguna, unreaded_Books inilah yang akan menjadi buku yang direkomendasikan kepada pengguna. Sebelumnya, pengguna telah memberi rating pada beberapa buku yang telah mereka baca. Rating ini digunakan untuk membuat rekomendasi buku yang mungkin cocok untuk pengguna. Buku yang akan direkomendasikan tentulah buku yang belum pernah dibaca oleh pengguna.
-
-![image](https://user-images.githubusercontent.com/110958395/194392908-f688e1c7-95a5-427c-a208-5a5a90e8c0b2.png)
-
-Gambar 6. Hasil Top 10 Recommendation
-
-Berdasarkan Gambar 6 merupakan rekomendasi untuk user dengan id 8872. Dari output tersebut, dapat melakukan perbandingan antara Books with high ratings from user dan Top 10 Books recommendation untuk user.
-
-    
 ## Referensi
 
 Reyvan Maulid (2022). *Kriteria Jenis Teknik Analisis Data dalam Forecasting*. Diambil dari: https://www.dqlab.id/kriteria-jenis-teknik-analisis-data-dalam-forecasting. Diakses tanggal: 06 Oktober 2022.
