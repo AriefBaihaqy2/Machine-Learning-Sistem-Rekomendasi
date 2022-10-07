@@ -249,7 +249,12 @@ Berdasarkan Gambar 4, keterangan yang ada pada persamaan RMSE yaitu:
 
   Gambar 5. Visualisasi plot metrik evaluasi RMSE
 
-  Berdasarkan Gambar 5, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi.
+  Berdasarkan Gambar 5, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi. 
+
+
+## Kesimpulan
+
+Sistem rekomendasi yang dibuat pada proyek ini untuk dapat merekomendasikan buku kepada pengguna dengan menggunakan dua pendekatan model algortima. Model pertama yaitu, *Content Based Filtering* yang bertujuan untuk menghasilkan sejumlah rekomendasi buku yang mirip dengan buku yang disukai pengguna di masa lalu. Dan model kedua yaitu, *Collaborative Filtering* yang bertujuan untuk menghasilkan sejumlah rekomendasi buku yang belum pernah dibaca sebelumnya yang mungkin akan disukai pengguna berdasarkan preferensi pengguna lain. Pengembangan kedua pendekatan model pada proyek ini untuk menghasilkan sistem rekomendasi buku telah memiliki tingkat akurasi perekomendasian dengan cukup baik. Namun tidak menutup kemungkinan, model yang telah dibuat pada proyek ini dapat dikembangkan lagi dengan lebih baik untuk mendapatkan tingkat akurasi yang lebih baik dan dapat lebih meminimalkan error.
 
 
 ## Referensi
