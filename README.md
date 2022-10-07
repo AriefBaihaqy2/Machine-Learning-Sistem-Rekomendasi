@@ -173,8 +173,6 @@ Adapun langkah yang digunakan untuk mendapatkan rekomendasi yaitu dengan menggun
 
 Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*.
 
-![Screenshot 2022-10-07 003703](https://user-images.githubusercontent.com/110958395/194398408-11b7599c-ab18-418a-abfb-ef559e0a49a7.jpg)
-
 | No.| Books Title                                 | Books Author     | Year | Publisher             |
 |----|---------------------------------------------|------------------|------|-----------------------|
 | 1  | The Haunting                                | Paul Doherty	    | 1998	| Headline              |
@@ -188,9 +186,9 @@ Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan bu
 | 9  | Great Tales of Terror (A Watermill Classic) |	Edgar Allan Poe  |	1993 |	Troll  Communications |
 | 10 | Tales Of Passion Tales Of Woe	              | Sandra Gulland   |	1999 |	Touchstone            |
 
-Gambar 2. Hasil Rekomendasi Buku
+Tabel 6. Hasil Rekomendasi Buku
 
-Berdasarkan Gambar 2, dapat diketahui bahwa dari 10 buku yang direkomendasikan memiliki kemiripan dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*. Dalam hal ini juga dapat diketahui dari 10 buku yang direkomendasikan, terdapat 8 buku yang relevan, jadi dapat disimpulkan precision pada sistem ini sebesar 80% yang mengacu pada rumus berikut:
+Berdasarkan Tabel 6, dapat diketahui bahwa dari 10 buku yang direkomendasikan memiliki kemiripan dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*. Dalam hal ini juga dapat diketahui dari 10 buku yang direkomendasikan, terdapat 8 buku yang relevan, jadi dapat disimpulkan precision pada sistem ini sebesar 80% yang mengacu pada rumus berikut:
 
 ![image](https://user-images.githubusercontent.com/110958395/194400379-df1a09ee-72d7-461b-a1aa-99440a3f1fd0.png)
 
