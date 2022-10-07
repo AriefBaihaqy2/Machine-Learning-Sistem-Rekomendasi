@@ -203,13 +203,13 @@ Berdasarkan Tabel 6, dapat diketahui bahwa dari 10 buku yang direkomendasikan me
    
       Pada tahap ini, model menghitung skor kecocokan antara pengguna dan buku dengan teknik embedding menggunakan class RecommenderNet. Pertama, melakukan proses embedding terhadap data user dan buku. Selanjutnya, melakukan operasi perkalian dot product antara embedding user dan buku. Selain itu, juga menambahkan bias untuk setiap user dan buku. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan proses compile terhadap model. Model ini menggunakan Binary Crossentropy untuk menghitung loss function, Adam (*Adaptive Moment Estimation*) sebagai optimizer dengan parameter learning rate sebesar 0.001, dan Root Mean Squared Error (RMSE) sebagai metrics evaluation.
       
-Setelah dilakukan tahapan-tahapan tersebut, dilakukan uji coba dengan menghasilkan Top-N Recommendation buku pada model *Collaborative Filtering*. Untuk mendapatkan rekomendasi buku, pertama mengambil sampel user secara acak dan mendefinisikan variabel unreaded_Books yang merupakan daftar buku yang belum pernah dibaca oleh pengguna, unreaded_Books inilah yang akan menjadi buku yang direkomendasikan kepada pengguna. Sebelumnya, pengguna telah memberi rating pada beberapa buku yang telah mereka baca. Rating ini digunakan untuk membuat rekomendasi buku yang mungkin cocok untuk pengguna. Buku yang akan direkomendasikan tentulah buku yang belum pernah dibaca oleh pengguna. Hasil rekomendasi buku dapat dilihat pada Gambar 6.
+Setelah dilakukan tahapan-tahapan tersebut, dilakukan uji coba dengan menghasilkan Top-N Recommendation buku pada model *Collaborative Filtering*. Untuk mendapatkan rekomendasi buku, pertama mengambil sampel user secara acak dan mendefinisikan variabel unreaded_Books yang merupakan daftar buku yang belum pernah dibaca oleh pengguna, unreaded_Books inilah yang akan menjadi buku yang direkomendasikan kepada pengguna. Sebelumnya, pengguna telah memberi rating pada beberapa buku yang telah mereka baca. Rating ini digunakan untuk membuat rekomendasi buku yang mungkin cocok untuk pengguna. Buku yang akan direkomendasikan tentulah buku yang belum pernah dibaca oleh pengguna. Hasil rekomendasi buku dapat dilihat pada Gambar 2.
 
 ![image](https://user-images.githubusercontent.com/110958395/194392908-f688e1c7-95a5-427c-a208-5a5a90e8c0b2.png)
 
-Gambar 6.Hasil Rekomendasi Buku *Collaborative Filtering*
+Gambar 2. Hasil Rekomendasi Buku *Collaborative Filtering*
 
-Berdasarkan Gambar 6 merupakan rekomendasi untuk user dengan id 8872. Dari output tersebut, dapat melakukan perbandingan antara Books with high ratings from user dan Top 10 Books recommendation untuk user.
+Berdasarkan Gambar 2 merupakan rekomendasi untuk user dengan id 8872. Dari output tersebut, dapat melakukan perbandingan antara Books with high ratings from user dan Top 10 Books recommendation untuk user.
    
 
 ## Evaluasi
