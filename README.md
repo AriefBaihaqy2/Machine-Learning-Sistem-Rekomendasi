@@ -161,7 +161,7 @@ Dapat dilihat sebelumnya pada bagian *Exploratory Data Analysis* bahwa sangat ba
    
       Gambar 1. Matriks Cosine Similarity
    
-      Berdasarkan Gambar 1, dapat diketahui angka yang memiliki nilai lebih dari 0 mengindikasikan kemiripan judul buku. Dalam hal ini judul buku pada kolom X (horizontal) memiliki kemiripan dengan judul buku pada baris Y (vertikal). Sebagai contoh, buku dengan judul *Resurrection Men (Inspector Rebus S.)* teridentifikasi mirip dengan buku berjudul *Wednesday's Child: An Inspector Banks Mystery*.
+      Berdasarkan Gambar 1, dapat diketahui angka yang memiliki nilai lebih dari 0 mengindikasikan kemiripan judul buku. Dalam hal ini judul buku pada baris Y (vertikal) memiliki kemiripan dengan judul buku pada kolom X (horizontal). Sebagai contoh, buku dengan judul *Resurrection Men (Inspector Rebus S.)* teridentifikasi mirip dengan buku berjudul *Wednesday's Child: An Inspector Banks Mystery*.
 
    3. **Mendapatkan Rekomendasi**
    
