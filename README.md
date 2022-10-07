@@ -211,21 +211,21 @@ Gambar 4. Rumus Metrik RMSE
 
 Berdasarkan Gambar 4, keterangan yang ada pada persamaan RMSE yaitu:
 
-n => Jumlah data
+    n => Jumlah data
 
-i => Urutan Data
+    i => Urutan Data
 
-ŷ => Nilai hasil prediksi
+    ŷ => Nilai hasil prediksi
 
-y => Nilai hasil observasi
+    y => Nilai hasil observasi
 
-Melihat visualisasi proses training plot metrik evaluasi RMSE dengan matplotlib.
+- Melihat visualisasi proses training plot metrik evaluasi RMSE dengan matplotlib.
 
-![image](https://user-images.githubusercontent.com/110958395/194392406-db867519-a312-4242-ab83-9c9b4f2f505e.png)
+  ![image](https://user-images.githubusercontent.com/110958395/194392406-db867519-a312-4242-ab83-9c9b4f2f505e.png)
 
-Gambar 5. Visualisasi plot metrik evaluasi RMSE
+  Gambar 5. Visualisasi plot metrik evaluasi RMSE
 
-Berdasarkan Gambar 5, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi.
+  Berdasarkan Gambar 5, dapat diketahui proses training model cukup smooth pada epochs sekitar 25. Dari proses ini, diperoleh nilai error akhir sebesar sekitar 0.12 dan error pada data validasi sebesar 0.23. Nilai tersebut cukup bagus untuk sebuah sistem rekomendasi.
 
 
 ## Mendapatkan Rekomendasi Buku
