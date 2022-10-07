@@ -167,7 +167,7 @@ Dapat dilihat sebelumnya pada bagian *Exploratory Data Analysis* bahwa sangat ba
    
       Pada tahap ini akan menghasilkan sejumlah buku yang akan direkomendasikan kepada pengguna dengan keluaran sistem rekomendasi buku berupa Top-N Recommendation, oleh karena itu sistem akan memberikan sejumlah rekomendasi buku pada pengguna. Sebagai contoh, pengguna X pernah membaca buku yang berjudul *Resurrection Men (Inspector Rebus S.)*. Kemudian, saat pengguna tersebut berencana untuk membaca buku lain, sistem akan merekomendasikan buku lain yang memiliki kemiripan dengan buku yang sebelumnya pernah dibaca oleh pengguna. Rekomendasi kedua buku ini berdasarkan kesamaan yang dihitung dengan Cosine Similarity pada tahap sebelumnya.
       
-Setelah dilakukan tahapan-tahapan tersebut, dilakukan uji coba dengan menghasilkan Top-N Recommendation pada model *Content Based Filtering*. Pada kasus kali ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*.
+Setelah dilakukan tahapan-tahapan tersebut, dilakukan uji coba dengan menghasilkan Top-N Recommendation pada model *Content Based Filtering*. Pada kasus kali ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*. Hasil rekomendasi buku dapat dilihat pada Tabel 6.
 
 | No.| Books Title                                 | Books Author     | Year | Publisher             |
 |----|---------------------------------------------|------------------|------|-----------------------|
