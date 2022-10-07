@@ -3,7 +3,7 @@
 ## Project Overview
 
 Sistem rekomendasi buku merupakan sistem yang merekomendasikan buku kepda pengguna. Sistem rekomendasi yang dibuat ini berdasarkan dengan preferensi kesukaan pengguna pada masa lalu dan rating dari buku yang ada.
-Dengan adanya sistem rekomendasi ini akan bermanfaat untuk meningkatkan keuntungan dari pembelian barang yang berupa buku atau juga bisa diterapkan pada perpustakaan agar pengguna mendapatkan rekomendasi buku yang sesuai dengan minatnya sehingga dapat menentukan pilihan dan dapat meningkatkan minat baca pangguna. 
+Dengan adanya sistem rekomendasi ini akan bermanfaat untuk meningkatkan keuntungan dari pembelian barang yang berupa buku atau juga bisa diterapkan pada perpustakaan agar pengguna mendapatkan rekomendasi buku yang sesuai dengan minatnya sehingga dapat menentukan pilihan dan dapat meningkatkan minat baca pengguna. 
  
 ## Business Understanding
 
