@@ -175,6 +175,19 @@ Pada kasus ini, dilakukan uji coba untuk mencari judul buku yang mirip dengan bu
 
 ![Screenshot 2022-10-07 003703](https://user-images.githubusercontent.com/110958395/194398408-11b7599c-ab18-418a-abfb-ef559e0a49a7.jpg)
 
+| No.| Books Title                                 | Books Author     | Year | Publisher             |
+|----|---------------------------------------------|------------------|------|-----------------------|
+| 1  | The Haunting                                | Paul Doherty	    | 1998	| Headline              |
+| 2  | Waking Beauty                               |	Paul Witcover	   | 1997	| Harpercollins         |   
+| 3  | Tales of Terror and the Supernatural        |	Wilkie Collins   |	1972	| Dover Publications    |
+| 4  | Magic Terror: Seven Tales                   |	Peter Straub     |	2001	| Fawcett Books         |
+| 5  | A Winter Haunting	                          | Dan Simmons      |	2002	| HarperTorch           |
+| 6  | Haunting Rachel	                            | KAY HOOPER       |	1999	| Bantam                |
+| 7  | CHRISTOPHER PIKE'S TALES OF TERROR #2       |	Christopher Pike	| 1998	| Simon Pulse           |
+| 8  | The Haunting of Hill House                  |	Shirley Jackson  |	1984	| Penguin Books         |
+| 9  | Great Tales of Terror (A Watermill Classic) |	Edgar Allan Poe  |	1993 |	Troll  Communications |
+| 10 | Tales Of Passion Tales Of Woe	              | Sandra Gulland   |	1999 |	Touchstone            |
+
 Gambar 2. Hasil Rekomendasi Buku
 
 Berdasarkan Gambar 2, dapat diketahui bahwa dari 10 buku yang direkomendasikan memiliki kemiripan dengan buku yang berjudul *Waking Up Screaming: Haunting Tales of Terror*. Dalam hal ini juga dapat diketahui dari 10 buku yang direkomendasikan, terdapat 8 buku yang relevan, jadi dapat disimpulkan precision pada sistem ini sebesar 80% yang mengacu pada rumus berikut:
